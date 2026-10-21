@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <title>存哪儿 · 存款利率与国债</title>
+  <meta name="description" content="国有大行挂牌利率、大额存单、储蓄国债、LPR 与历次调息，附利息计算器">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0b0a08;
+      --panel: #16140f;
+      --panel-2: #1e1b14;
+      --hover: rgba(255,255,255,0.035);
+      --line: rgba(255,255,255,0.07);
+      --line-2: rgba(255,255,255,0.14);
+      --text-1: #f3efe6;
+      --text-2: #aaa293;
+      --text-3: #6f685b;
+      --accent: #f5b94a;
+      --accent-2: #f08a3c;
+      --grad: linear-gradient(120deg, #f8d27a 0%, #f5b94a 45%, #f08a3c 100%);
+      --bond: #6fb8ff;
+      --cd: #b58cff;
+      --bank: #f5b94a;
+      --other: #5fd3a4;
+      --cut: #ff7a6b;
+      --shadow: 0 0 0 1px var(--line), 0 12px 32px rgba(0,0,0,0.35);
+    }
+    :root[data-theme="light"] {
+      --bg: #faf8f3;
+      --panel: #ffffff;
+      --panel-2: #f5f1e8;
+      --hover: rgba(60,40,0,0.035);
+      --line: rgba(60,40,0,0.09);
+      --line-2: rgba(60,40,0,0.17);
+      --text-1: #211c12;
+      --text-2: #5f574a;
+      --text-3: #9a917f;
+      --accent: #c98a12;
+      --accent-2: #d06a1c;
+      --bond: #1f7ad6;
+      --cd: #7d4fd6;
+      --bank: #c98a12;
+      --other: #1a9b6b;
+      --cut: #d6463a;
+      --shadow: 0 0 0 1px var(--line), 0 10px 28px rgba(60,40,0,0.07);
+    }
+    body { background: var(--bg); color: var(--text-1); font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      font-size: 14px; line-height: 1.55; -webkit-font-smoothing: antialiased; font-feature-settings: 'tnum' 1; min-height: 100vh; }
+    body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: radial-gradient(900px 420px at 15% -10%, rgba(245,185,74,0.10), transparent 70%); }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+    input, select { font: inherit; color: var(--text-1); }
+
+    .topbar { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      background: color-mix(in srgb, var(--bg) 75%, transparent); border-bottom: 1px solid var(--line); }
+    .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 14px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; letter-spacing: -0.02em; white-space: nowrap; }
+    .logo-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--grad); display: grid; place-items: center; font-size: 16px; }
+    .logo small { font-weight: 500; color: var(--text-3); font-size: 12px; margin-left: 2px; }
+    .nav { display: flex; gap: 4px; margin-left: 10px; }
+    .nav a { padding: 6px 12px; border-radius: 8px; color: var(--text-2); font-size: 13px; font-weight: 500; white-space: nowrap; }
+    .nav a:hover { color: var(--text-1); background: var(--hover); }
+    .spacer { flex: 1; }
+    .updated { font-size: 12px; color: var(--text-3); white-space: nowrap; }
+    .icon-btn { width: 34px; height: 34px; border-radius: 10px; border: 1px solid var(--line); display: grid; place-items: center; color: var(--text-2); flex-shrink: 0; }
+    .icon-btn:hover { color: var(--text-1); border-color: var(--line-2); }
+    .icon-btn.spin svg { animation: spin .8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .layout { max-width: 1200px; margin: 0 auto; padding: 24px 20px 64px; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 22px; }
+    .aside { position: sticky; top: 76px; align-self: start; display: flex; flex-direction: column; gap: 14px; }
+    .panel { background: var(--panel); border-radius: 16px; box-shadow: var(--shadow); }
+    .pad { padding: 18px 20px; }
+    h2.sec { font-size: 17px; font-weight: 700; margin: 34px 0 12px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; scroll-margin-top: 80px; }
+    h2.sec small { color: var(--text-3); font-weight: 500; font-size: 12.5px; }
+    .hero h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+    .hero h1 em { font-style: normal; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p { color: var(--text-2); margin-top: 6px; }
+    .alert { margin-top: 14px; padding: 12px 16px; border-radius: 12px; background: color-mix(in srgb, var(--cut) 12%, transparent); border: 1px solid color-mix(in srgb, var(--cut) 35%, transparent); font-size: 13.5px; }
+    .alert b { color: var(--cut); }
+
+    .kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+    .kpi { padding: 16px 18px; min-width: 0; display: flex; flex-direction: column; }
+    .kpi .k { font-size: 12.5px; color: var(--text-2); display: flex; align-items: center; gap: 6px; }
+    .kpi .k::before { content: ""; width: 8px; height: 8px; border-radius: 3px; background: var(--c); }
+    .kpi .v { font-size: 30px; font-weight: 700; letter-spacing: -0.03em; margin-top: 4px; white-space: nowrap; }
+    .kpi .v small { font-size: 15px; font-weight: 500; color: var(--text-2); margin-left: 2px; }
+    .kpi .s { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+
+    /* 计算器 */
+    .calc { padding: 20px; display: grid; gap: 18px; }
+    .calc-in { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label { font-size: 12px; color: var(--text-3); font-weight: 500; }
+    .input { display: flex; align-items: center; background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; min-height: 44px; }
+    .input:focus-within { border-color: var(--accent); }
+    .input input { width: 180px; background: none; border: 0; outline: 0; padding: 10px 12px; font-size: 18px; font-weight: 700; }
+    .input .unit { padding: 0 12px; color: var(--text-2); font-weight: 600; }
+    .seg { display: inline-flex; background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 3px; min-height: 44px; align-items: center; }
+    .seg button { padding: 7px 14px; border-radius: 8px; font-size: 13.5px; color: var(--text-2); font-weight: 500; }
+    .seg button.on { background: var(--panel); color: var(--text-1); box-shadow: 0 0 0 1px var(--line-2); }
+    .quick { display: flex; gap: 6px; }
+    .quick button { font-size: 12px; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--text-2); }
+    .quick button:hover { color: var(--text-1); border-color: var(--line-2); }
+    .bars { display: flex; flex-direction: column; gap: 10px; }
+    .bar-row { display: grid; grid-template-columns: 150px minmax(0, 1fr) 130px; gap: 14px; align-items: center; }
+    .bar-row .nm { font-size: 13.5px; font-weight: 500; }
+    .bar-row .nm small { display: block; font-size: 11.5px; color: var(--text-3); font-weight: 400; }
+    .bar-track { height: 26px; border-radius: 8px; background: var(--panel-2); overflow: hidden; position: relative; }
+    .bar-fill { height: 100%; border-radius: 8px; background: var(--c); opacity: .85; transition: width .4s ease; }
+    .bar-fill.best { opacity: 1; box-shadow: 0 0 0 2px color-mix(in srgb, var(--c) 40%, transparent); }
+    .bar-row .val { text-align: right; font-size: 15px; font-weight: 700; }
+    .bar-row .val small { display: block; font-size: 11.5px; color: var(--text-3); font-weight: 500; }
+    .bar-row.na .bar-fill { opacity: .18; }
+    .bar-row.na .val { color: var(--text-3); font-weight: 500; font-size: 12.5px; }
+    .verdict { font-size: 14px; color: var(--text-2); padding: 12px 14px; border-radius: 10px; background: var(--panel-2); }
+    .verdict b { color: var(--text-1); }
+
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px 14px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+    th { font-size: 12px; color: var(--text-3); font-weight: 600; }
+    th:first-child, td:first-child { text-align: left; }
+    tr:last-child td { border-bottom: 0; }
+    td.best { color: var(--accent); font-weight: 700; }
+    .table-wrap { overflow-x: auto; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 3px; margin-right: 6px; background: var(--c); }
+    .muted { color: var(--text-3); }
+    .cut { color: var(--cut); }
+    .tag { font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 6px; background: var(--hover); color: var(--text-2); margin-left: 6px; }
+    .tag.on { background: color-mix(in srgb, var(--bond) 16%, transparent); color: var(--bond); }
+
+    /* 时间线 */
+    .chart-box { padding: 18px 18px 10px; }
+    .chart { position: relative; }
+    .chart svg { width: 100%; height: 280px; display: block; overflow: visible; }
+    .tip { position: absolute; pointer-events: none; background: var(--panel-2); box-shadow: var(--shadow); border-radius: 8px; padding: 6px 10px; font-size: 12px; white-space: nowrap; transform: translate(-50%, -115%); display: none; }
+    .legend { display: flex; gap: 16px; font-size: 12px; color: var(--text-2); margin-top: 8px; flex-wrap: wrap; }
+    .legend i { display: inline-block; width: 16px; height: 0; border-top: 2px solid var(--c); vertical-align: middle; margin-right: 5px; }
+    .changes { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 2px; scrollbar-width: thin; }
+    .chg { flex-shrink: 0; padding: 10px 12px; border-radius: 10px; background: var(--panel-2); min-width: 120px; }
+    .chg .d { font-size: 12px; color: var(--text-3); }
+    .chg .r { font-size: 16px; font-weight: 700; }
+    .chg .r small { font-size: 12px; font-weight: 600; margin-left: 4px; }
+
+    /* 国债 */
+    .next { padding: 18px 20px; display: grid; grid-template-columns: auto 1fr; gap: 6px 24px; align-items: center; margin-bottom: 12px; }
+    .next .cd { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; grid-row: span 2; color: var(--bond); }
+    .next .cd small { font-size: 16px; font-weight: 600; color: var(--text-2); margin-left: 4px; }
+    .next .t { font-size: 15px; font-weight: 600; }
+    .next .s { font-size: 12.5px; color: var(--text-3); }
+
+    .news-item { display: flex; gap: 10px; padding: 11px 16px; border-bottom: 1px solid var(--line); align-items: baseline; }
+    .news-item:last-child { border-bottom: 0; }
+    .news-item:hover { background: var(--hover); }
+    .news-item .t { flex: 1; min-width: 0; font-size: 14px; }
+    .news-item:hover .t { color: var(--accent); }
+    .news-item .m { font-size: 12px; color: var(--text-3); white-space: nowrap; }
+    .chips { display: flex; gap: 6px; margin-bottom: 10px; }
+    .chip { padding: 4px 11px; border-radius: 999px; border: 1px solid var(--line); color: var(--text-2); font-size: 12.5px; }
+    .chip.on { background: var(--text-1); color: var(--bg); border-color: var(--text-1); }
+
+    .widget { padding: 16px; }
+    .widget h3 { font-size: 13px; font-weight: 700; color: var(--text-2); margin-bottom: 10px; }
+    .mini-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; gap: 8px; }
+    .mini-row span:first-child { color: var(--text-2); }
+    .note { font-size: 12px; color: var(--text-3); line-height: 1.7; }
+    .note a { text-decoration: underline; text-underline-offset: 2px; }
+    .ok { color: var(--other); } .bad { color: var(--cut); }
+
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: minmax(0, 1fr); }
+      .aside { position: static; }
+      .nav { display: none; }
+    }
+    @media (max-width: 760px) {
+      .topbar-inner { padding: 10px 16px; }
+      .logo small, .updated { display: none; }
+      .layout { padding: 16px 16px 50px; }
+      .hero h1 { font-size: 21px; }
+      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .kpi .v { font-size: 24px; }
+      .input input { width: 130px; }
+      .bar-row { grid-template-columns: 96px minmax(0, 1fr) 92px; gap: 8px; }
+      .bar-row .val { font-size: 13.5px; }
+      .chart svg { height: 220px; }
+      th, td { padding: 9px 10px; }
+      .next .cd { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="logo"><div class="logo-mark">🏦</div>存哪儿<small>存款利率与国债</small></div>
+      <nav class="nav"><a href="#calc">计算器</a><a href="#rates">利率对比</a><a href="#history">调息记录</a><a href="#bonds">储蓄国债</a><a href="#news">动态</a></nav>
+      <div class="spacer"></div>
+      <span class="updated" id="updated"></span>
+      <button class="icon-btn" id="refresh" title="重新读取数据"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 3v6h-6"/></svg></button>
+      <a class="icon-btn" href="https://github.com/climb0516/savings-rates/actions/workflows/scrape.yml" target="_blank" rel="noopener" title="立即抓取（在 GitHub Actions 点 Run workflow）">⚡</a>
+      <button class="icon-btn" id="theme" title="切换主题"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main id="main"><div class="panel pad muted">加载中…</div></main>
+    <aside class="aside" id="aside"></aside>
+  </div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('sv:' + k); return v === null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem('sv:' + k, JSON.stringify(v)); } catch {} },
+};
+const state = { amount: store.get('amount', 100000), term: store.get('term', 3), topic: 'all' };
+let D = null;
+
+// ── 工具 ──
+const fmtMoney = v => v.toLocaleString('zh-CN', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+const fmtRate = v => v == null ? '—' : v.toFixed(2) + '%';
+const daysBetween = (a, b) => Math.round((new Date(b) - new Date(a)) / 86400000);
+const todayISO = () => new Date(Date.now() + 8 * 3600000).toISOString().slice(0, 10);   // 北京时间
+function ago(iso) {
+  const s = (Date.now() - new Date(iso)) / 1000;
+  if (s < 3600) return Math.max(1, Math.round(s / 60)) + ' 分钟前';
+  if (s < 86400) return Math.round(s / 3600) + ' 小时前';
+  return Math.round(s / 86400) + ' 天前';
+}
+const md = iso => iso ? `${+iso.slice(5, 7)}月${+iso.slice(8, 10)}日` : '';
+
+// 最新一轮国债利率（按期限）
+function bondRates() {
+  const r = {};
+  for (const b of D.bonds) for (const i of b.items) if (!(i.term in r)) r[i.term] = { rate: i.rate, start: b.start, kind: b.kind };
+  return r;
+}
+// 下期国债：已有公告且未结束的优先；否则按「3–11 月每月 10 日」推算
+function nextBond() {
+  const today = todayISO();
+  const live = D.bonds.find(b => b.start && b.end && b.start <= today && today <= b.end);
+  if (live) return { status: 'live', bond: live };
+  const announced = D.bonds.filter(b => b.start > today).sort((a, b) => a.start.localeCompare(b.start))[0];
+  if (announced) return { status: 'announced', bond: announced, date: announced.start };
+  let y = +today.slice(0, 4), m = +today.slice(5, 7);
+  if (+today.slice(8, 10) > 10) m++;
+  if (m > 11 || m < 3) { if (m > 11) y++; m = 3; }
+  return { status: 'expected', date: `${y}-${String(m).padStart(2, '0')}-10` };
+}
+
+// ── 渠道与计算 ──
+function channels(term) {
+  const dep = D.deposit.rates, cd = D.cd?.rates || {}, br = bondRates(), others = D.others?.groups || [];
+  const key = term + '年';
+  const list = [
+    { id: 'bank', name: '国有大行定期', sub: '整存整取挂牌', rate: dep[key], c: 'var(--bank)' },
+    { id: 'cd', name: '大额存单', sub: `中行常规 · ${fmtMoney((D.cd?.min_amount || 200000) / 10000)} 万起`, rate: cd[key], c: 'var(--cd)',
+      na: state.amount < (D.cd?.min_amount || 200000) ? `需 ${fmtMoney((D.cd?.min_amount || 200000) / 10000)} 万起` : null },
+    { id: 'bond', name: '储蓄国债', sub: '凭证式 / 电子式', rate: br[term]?.rate, c: 'var(--bond)', na: br[term] ? null : '只有 3 年、5 年期' },
+    ...others.map((g, i) => ({ id: 'o' + i, name: g.name + '（参考）', sub: g.remark?.slice(0, 18) || '', rate: g.rates?.[key], c: 'var(--other)' })),
+  ];
+  return list.map(x => ({ ...x, na: x.na || (x.rate == null ? '无此期限' : null), interest: x.rate == null ? 0 : state.amount * x.rate / 100 * term }));
+}
+
+// ── 视图 ──
+function render() {
+  const dep = D.deposit, br = bondRates(), cd = D.cd, nb = nextBond();
+  const stableDays = daysBetween(dep.date, todayISO());
+  const lpr = D.lpr?.[0];
+  const ch = D.rate_change?.date && daysBetween(D.rate_change.detected, new Date().toISOString()) <= 30 ? D.rate_change : null;
+  const prev = D.deposit_history[1];
+  const nbText = nb.status === 'live' ? '发售中' : `${daysBetween(todayISO(), nb.date)} 天后`;
+
+  $('#main').innerHTML = `
+    <section class="hero">
+      <h1>钱<em>存哪儿</em>利息最高？</h1>
+      <p>国有大行挂牌利率、大额存单、储蓄国债和中小银行参考，一页对比，附利息计算器。</p>
+      ${ch ? `<div class="alert"><b>调息提醒</b>：中国银行发布了 ${esc(ch.date)} 起执行的新存款利率表，三年期 ${fmtRate(prev?.rates['3年'])} → <b>${fmtRate(dep.rates['3年'])}</b>。</div>` : ''}
+    </section>
+    <div class="kpis">
+      <div class="panel kpi" style="--c:var(--bank)"><span class="k">大行 3 年定期</span><span class="v">${dep.rates['3年'].toFixed(2)}<small>%</small></span><span class="s">${md(dep.date)}起执行 · 已 ${stableDays} 天未调</span></div>
+      <div class="panel kpi" style="--c:var(--cd)"><span class="k">大额存单 3 年</span><span class="v">${cd?.rates['3年']?.toFixed(2) ?? '—'}<small>%</small></span><span class="s">中行常规 · 20 万起</span></div>
+      <div class="panel kpi" style="--c:var(--bond)"><span class="k">储蓄国债 3 / 5 年</span><span class="v">${br[3]?.rate.toFixed(2) ?? '—'}<small>/ ${br[5]?.rate.toFixed(2) ?? '—'}%</small></span><span class="s">免利息税 · 发行即抢光</span></div>
+      <div class="panel kpi" style="--c:var(--accent-2)"><span class="k">下期国债</span><span class="v">${nbText}</span><span class="s">${nb.status === 'live' ? `${md(nb.bond.start)}–${md(nb.bond.end)} · ${nb.bond.kind}` : `${md(nb.date)} ${nb.status === 'expected' ? '（预计）' : '开售'}`}</span></div>
+    </div>
+
+    <h2 class="sec" id="calc">利息计算器<small>按单利估算，到期一次性拿到的利息</small></h2>
+    <div class="panel calc">
+      <div class="calc-in">
+        <div class="field"><label>存多少</label><div class="input"><input id="amount" type="text" inputmode="numeric" value="${esc(state.amount)}"><span class="unit">元</span></div></div>
+        <div class="field"><label>存几年</label><div class="seg">${[1, 2, 3, 5].map(t => `<button data-term="${t}" class="${state.term === t ? 'on' : ''}">${t} 年</button>`).join('')}</div></div>
+        <div class="field"><label>快捷金额</label><div class="quick">${[[50000, '5 万'], [100000, '10 万'], [200000, '20 万'], [500000, '50 万']].map(([v, l]) => `<button data-amount="${v}">${l}</button>`).join('')}</div></div>
+      </div>
+      <div class="bars" id="bars"></div>
+      <div class="verdict" id="verdict"></div>
+    </div>
+
+    <h2 class="sec" id="rates">利率对比<small>年利率，单位 %</small></h2>
+    <div class="panel"><div class="table-wrap">${rateTable()}</div></div>
+
+    <h2 class="sec" id="history">调息记录<small>中国银行人民币存款挂牌利率，${D.deposit_history.length} 次调整</small></h2>
+    <div class="panel chart-box">
+      <div class="chart" id="chart">${chartSVG()}<div class="tip" id="tip"></div></div>
+      <div class="legend"><span style="--c:var(--bank)"><i></i>大行 3 年定期</span><span style="--c:var(--accent-2)"><i></i>大行 1 年定期</span><span style="--c:var(--bond)"><i></i>储蓄国债 3 年</span></div>
+      <div class="changes" style="margin-top:14px">${changesList()}</div>
+    </div>
+
+    <h2 class="sec" id="bonds">储蓄国债<small>来自中国银行销售公告 · 每年 3–11 月每月 10 日开售</small></h2>
+    <div class="panel next">
+      <div class="cd">${nb.status === 'live' ? '发售中' : daysBetween(todayISO(), nb.date)}${nb.status === 'live' ? '' : '<small>天</small>'}</div>
+      <div class="t">${nb.status === 'live' ? `${esc(nb.bond.title.replace('销售公告', ''))}` : nb.status === 'announced' ? `${md(nb.date)} 开售 · ${esc(nb.bond.title.replace('销售公告', ''))}` : `预计 ${md(nb.date)} 开售`}</div>
+      <div class="s">${nb.status === 'expected' ? '以财政部公告为准（通常提前几天发布）。凭证式到银行网点买，电子式在手机银行买，热门时几分钟售罄，建议开售当天 8:30 前准备好。' : `${md(nb.bond?.start)}–${md(nb.bond?.end)} · ${nb.bond?.kind} · ${nb.bond?.kind === '凭证式' ? '银行网点购买，到期一次还本付息' : '手机银行 / 网银购买，按年付息'}`}</div>
+    </div>
+    <div class="panel"><div class="table-wrap">${bondTable()}</div></div>
+
+    <h2 class="sec" id="news">最新动态</h2>
+    <div class="chips">${[['all', '全部'], ['国债', '国债'], ['存款', '存款利率'], ['大额存单', '大额存单']].map(([k, l]) => `<button class="chip ${state.topic === k ? 'on' : ''}" data-topic="${k}">${l}</button>`).join('')}</div>
+    <div class="panel">${D.news.filter(n => state.topic === 'all' || n.topic === state.topic).slice(0, 15).map(n => `<a class="news-item" href="${esc(n.url)}" target="_blank" rel="noopener">
+      <span class="t">${esc(n.title)}</span><span class="m">${esc(n.source)} · ${ago(n.time)}</span></a>`).join('') || '<div class="pad muted">暂无</div>'}</div>
+    <p class="note" style="margin-top:14px">数据仅供参考，不构成理财建议。实际利率以银行网点、App 或财政部公告为准；大额存单和国债额度有限，不同地区可能不同。</p>
+  `;
+  renderCalc();
+  bindChart();
+
+  const abcOk = D.abc && ['1年', '3年', '5年'].every(k => D.abc.rates[k] === dep.rates[k]);
+  $('#aside').innerHTML = `
+    <div class="panel widget">
+      <h3>📈 贷款市场报价利率 LPR</h3>
+      ${lpr ? `<div class="mini-row"><span>1 年期</span><b>${lpr['1Y'].toFixed(2)}%</b></div><div class="mini-row"><span>5 年期以上（房贷参考）</span><b>${lpr['5Y'].toFixed(2)}%</b></div>
+      <div class="note" style="margin-top:6px">${md(lpr.date)}公布 · 每月 20 日更新${lpr.date !== D.lpr.at(-1)?.date && D.lpr.every(x => x['1Y'] === lpr['1Y']) ? ` · 近 ${D.lpr.length} 个月未变` : ''}</div>` : '<div class="note">暂无</div>'}
+    </div>
+    <div class="panel widget">
+      <h3>🏛 国有大行挂牌</h3>
+      <div class="mini-row"><span>生效日期</span><b>${esc(dep.date)}</b></div>
+      <div class="mini-row"><span>中行 / 农行核对</span><b class="${abcOk ? 'ok' : 'bad'}">${abcOk ? '一致' : '不一致'}</b></div>
+      <div class="note" style="margin-top:6px">工、农、中、建、交、邮储六大行挂牌利率一致，这里以中行为准、农行交叉核对。</div>
+    </div>
+    <div class="panel widget">
+      <h3>🏘 中小银行参考</h3>
+      ${(D.others?.groups || []).map(g => `<div class="mini-row"><span>${esc(g.name)} 3 年</span><b>${g.range?.['3年'] ? g.range['3年'].map(v => v.toFixed(2)).join('–') + '%' : fmtRate(g.rates?.['3年'])}</b></div>`).join('')}
+      <div class="note" style="margin-top:6px">${esc(D.others?.note || '')}<br>整理于 ${esc(D.others?.updated || '')} · ${(D.others?.sources || []).map((s, i) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">来源${i + 1}</a>`).join(' ')}</div>
+    </div>
+    <div class="panel widget">
+      <h3>📡 数据来源 · ${D.sources.filter(s => s.ok).length}/${D.sources.length} 正常</h3>
+      ${D.sources.map(s => `<div class="mini-row"><span>${esc(s.name)}</span><span class="${s.ok ? 'ok' : 'bad'}">${s.ok ? '正常' : '失败 · 沿用旧数据'}</span></div>`).join('')}
+      <div class="note" style="margin-top:6px">每天 2 次自动抓取 · 最近 ${new Date(D.updated).toLocaleString('zh-CN', { hour12: false })}</div>
+    </div>`;
+  $('#updated').textContent = '更新于 ' + ago(D.updated);
+}
+
+function renderCalc() {
+  const list = channels(state.term);
+  const valid = list.filter(x => !x.na);
+  const max = Math.max(...valid.map(x => x.interest), 1);
+  const best = valid.reduce((a, b) => b.interest > (a?.interest ?? -1) ? b : a, null);
+  const bank = list.find(x => x.id === 'bank');
+  $('#bars').innerHTML = list.map(x => `<div class="bar-row ${x.na ? 'na' : ''}" style="--c:${x.c}">
+      <span class="nm">${esc(x.name)}<small>${esc(x.sub)}</small></span>
+      <div class="bar-track"><div class="bar-fill ${x === best ? 'best' : ''}" style="width:${x.na ? 100 : x.interest / max * 100}%"></div></div>
+      <span class="val">${x.na ? esc(x.na) : `+${fmtMoney(x.interest)}<small>${fmtRate(x.rate)}</small>`}</span></div>`).join('');
+  $('#verdict').innerHTML = best && bank && !bank.na
+    ? `${fmtMoney(state.amount)} 元存 ${state.term} 年：放<b>${esc(best.name)}</b>利息最多，<b>${fmtMoney(best.interest)} 元</b>，比大行定期多 <b>${fmtMoney(best.interest - bank.interest)} 元</b>。${best.id.startsWith('o') ? '（中小银行为参考利率，需确认当地实际报价和起存条件）' : ''}`
+    : '';
+}
+
+function rateTable() {
+  const dep = D.deposit.rates, cd = D.cd?.rates || {}, br = bondRates(), others = D.others?.groups || [];
+  const terms = ['活期', '3个月', '6个月', '1年', '2年', '3年', '5年'];
+  const cols = [['国有大行', 'var(--bank)', t => dep[t]], ['大额存单', 'var(--cd)', t => cd[t]], ['储蓄国债', 'var(--bond)', t => br[parseInt(t)]?.rate && t.endsWith('年') ? br[parseInt(t)].rate : null],
+    ...others.map(g => [g.name + '（参考）', 'var(--other)', t => g.rates?.[t]])];
+  return `<table><tr><th>期限</th>${cols.map(([n, c]) => `<th><span class="dot" style="--c:${c}"></span>${esc(n)}</th>`).join('')}</tr>
+    ${terms.map(t => {
+      const vals = cols.map(([, , f]) => f(t));
+      const mx = Math.max(...vals.filter(v => v != null));
+      return `<tr><td>${t}</td>${vals.map(v => `<td class="${v != null && v === mx && vals.filter(x => x != null).length > 1 ? 'best' : ''}">${v == null ? '<span class="muted">—</span>' : v.toFixed(2)}</td>`).join('')}</tr>`;
+    }).join('')}</table>`;
+}
+
+function changesList() {
+  const h = D.deposit_history;
+  return h.slice(0, 12).map((x, i) => {
+    const p = h[i + 1], d = p ? x.rates['3年'] - p.rates['3年'] : 0;
+    return `<a class="chg" href="${esc(x.url)}" target="_blank" rel="noopener"><div class="d">${esc(x.date)}</div>
+      <div class="r">${x.rates['3年'].toFixed(2)}%${p ? `<small class="${d < 0 ? 'cut' : 'ok'}">${d < 0 ? '↓' : d > 0 ? '↑' : ''}${Math.abs(d).toFixed(2)}</small>` : ''}</div><div class="d">三年期</div></a>`;
+  }).join('');
+}
+
+function bondTable() {
+  const today = todayISO();
+  return `<table><tr><th>发售时间</th><th>品种</th><th>期数</th><th>3 年期</th><th>5 年期</th><th></th></tr>
+    ${D.bonds.slice(0, 14).map(b => {
+      const r3 = b.items.find(i => i.term === 3), r5 = b.items.find(i => i.term === 5);
+      const live = b.start <= today && today <= b.end;
+      return `<tr><td>${esc(b.start || '')}${live ? '<span class="tag on">发售中</span>' : ''}</td><td>${esc(b.kind)}</td><td>${b.year} · 第 ${b.items.map(i => i.no).join('、')} 期</td>
+        <td>${r3 ? r3.rate.toFixed(2) + '%' : '—'}</td><td>${r5 ? r5.rate.toFixed(2) + '%' : '—'}</td><td><a class="muted" href="${esc(b.url)}" target="_blank" rel="noopener">公告 ↗</a></td></tr>`;
+    }).join('')}</table>`;
+}
+
+// 阶梯折线：调息是阶跃变化，用水平 + 垂直线段
+let CH = null;
+function chartSVG() {
+  const h = [...D.deposit_history].reverse();
+  const bonds = [...D.bonds].reverse().filter(b => b.start && b.items.find(i => i.term === 3)).map(b => ({ date: b.start, v: b.items.find(i => i.term === 3).rate }));
+  const today = todayISO();
+  const t0 = new Date(h[0].date).getTime(), t1 = new Date(today).getTime();
+  const vals = [...h.flatMap(x => [x.rates['3年'], x.rates['1年']]), ...bonds.map(b => b.v)];
+  const W = 820, H = 280, L = 8, R = 44, T = 10, B = 24, max = Math.ceil(Math.max(...vals)), min = 0;
+  const x = d => L + (new Date(d).getTime() - t0) / (t1 - t0) * (W - L - R);
+  const y = v => T + (1 - (v - min) / (max - min)) * (H - T - B);
+  const step = (pts, key) => pts.map((p, i) => `${i ? `H${x(p.date).toFixed(1)}V` : `M${x(p.date).toFixed(1)},`}${y(key(p)).toFixed(1)}`).join('') + `H${x(today).toFixed(1)}`;
+  CH = { h, x, y, W, H };
+  const grid = Array.from({ length: max + 1 }, (_, v) => `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${W - R + 6}" y="${y(v) + 4}" font-size="11" fill="var(--text-3)">${v}%</text>`).join('');
+  const years = []; for (let yr = new Date(h[0].date).getFullYear() + 1; yr <= +today.slice(0, 4); yr += 2) years.push(yr);
+  const ticks = years.map(yr => `<text x="${x(yr + '-01-01')}" y="${H - 6}" font-size="11" fill="var(--text-3)" text-anchor="middle">${yr}</text>`).join('');
+  const dots = h.map(p => `<circle cx="${x(p.date)}" cy="${y(p.rates['3年'])}" r="3" fill="var(--bank)"/>`).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" id="csvg">${grid}${ticks}
+    <path d="${step(h, p => p.rates['1年'])}" fill="none" stroke="var(--accent-2)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+    <path d="${step(h, p => p.rates['3年'])}" fill="none" stroke="var(--bank)" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+    ${bonds.length ? `<path d="${step(bonds, p => p.v)}" fill="none" stroke="var(--bond)" stroke-width="2" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/>` : ''}
+    ${dots}<line id="cross" y1="${T}" y2="${H - B}" stroke="var(--line-2)" visibility="hidden"/></svg>`;
+}
+function bindChart() {
+  const box = $('#chart'), svg = $('#csvg'), tip = $('#tip');
+  if (!box || !CH) return;
+  const move = e => {
+    const r = svg.getBoundingClientRect(), cx = ((e.touches ? e.touches[0].clientX : e.clientX) - r.left) / r.width * CH.W;
+    let cur = CH.h[0];
+    for (const p of CH.h) if (CH.x(p.date) <= cx) cur = p;
+    tip.innerHTML = `${esc(cur.date)} 起<br>三年 <b>${cur.rates['3年'].toFixed(2)}%</b> · 一年 ${cur.rates['1年'].toFixed(2)}% · 活期 ${cur.rates['活期'].toFixed(2)}%`;
+    tip.style.display = 'block';
+    tip.style.left = Math.min(r.width - 120, Math.max(120, cx / CH.W * r.width)) + 'px';
+    tip.style.top = (CH.y(cur.rates['3年']) / CH.H * r.height) + 'px';
+    const c = $('#cross'); c.setAttribute('x1', cx); c.setAttribute('x2', cx); c.setAttribute('visibility', 'visible');
+  };
+  box.addEventListener('mousemove', move); box.addEventListener('touchmove', move, { passive: true });
+  box.addEventListener('mouseleave', () => { tip.style.display = 'none'; $('#cross').setAttribute('visibility', 'hidden'); });
+}
+
+// ── 交互 ──
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-term],[data-amount],[data-topic]');
+  if (!t) return;
+  if (t.dataset.term) { state.term = +t.dataset.term; store.set('term', state.term); document.querySelectorAll('[data-term]').forEach(b => b.classList.toggle('on', b === t)); renderCalc(); }
+  if (t.dataset.amount) { state.amount = +t.dataset.amount; store.set('amount', state.amount); $('#amount').value = state.amount; renderCalc(); }
+  if (t.dataset.topic) { state.topic = t.dataset.topic; render(); }
+});
+document.addEventListener('input', e => {
+  if (e.target.id !== 'amount') return;
+  state.amount = +e.target.value.replace(/[^\d]/g, '') || 0;
+  store.set('amount', state.amount);
+  renderCalc();
+});
+function applyTheme(t) { document.documentElement.dataset.theme = t; }
+applyTheme(store.get('theme', 'dark'));
+$('#theme').addEventListener('click', () => { const t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'; applyTheme(t); store.set('theme', t); render(); });
+
+async function load() {
+  $('#refresh').classList.add('spin');
+  try {
+    D = await fetch('data.json', { cache: 'no-cache' }).then(r => r.json());   // no-cache：更新后刷新即可见
+    render();
+  } catch (e) {
+    if (!D) $('#main').innerHTML = '<div class="panel pad">数据加载失败，请稍后刷新</div>';
+  } finally { $('#refresh').classList.remove('spin'); }
+}
+$('#refresh').addEventListener('click', load);
+load();
+</script>
+</body>
+</html>

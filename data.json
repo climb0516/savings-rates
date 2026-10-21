@@ -1,0 +1,1108 @@
+{
+ "updated": "2026-10-21T10:24:28+08:00",
+ "deposit": {
+  "date": "2025-05-20",
+  "rates": {
+   "活期": 0.05,
+   "3个月": 0.65,
+   "6个月": 0.85,
+   "1年": 0.95,
+   "2年": 1.05,
+   "3年": 1.25,
+   "5年": 1.3
+  },
+  "url": "https://www.boc.cn/fimarkets/lilv/fd31/202505/t20250520_25356440.html"
+ },
+ "deposit_history": [
+  {
+   "date": "2025-05-20",
+   "rates": {
+    "活期": 0.05,
+    "3个月": 0.65,
+    "6个月": 0.85,
+    "1年": 0.95,
+    "2年": 1.05,
+    "3年": 1.25,
+    "5年": 1.3
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/202505/t20250520_25356440.html"
+  },
+  {
+   "date": "2024-10-18",
+   "rates": {
+    "活期": 0.1,
+    "3个月": 0.8,
+    "6个月": 1.0,
+    "1年": 1.1,
+    "2年": 1.2,
+    "3年": 1.5,
+    "5年": 1.55
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/202410/t20241018_25175416.html"
+  },
+  {
+   "date": "2024-07-25",
+   "rates": {
+    "活期": 0.15,
+    "3个月": 1.05,
+    "6个月": 1.25,
+    "1年": 1.35,
+    "2年": 1.45,
+    "3年": 1.75,
+    "5年": 1.8
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/202407/t20240725_25118074.html"
+  },
+  {
+   "date": "2023-12-22",
+   "rates": {
+    "活期": 0.2,
+    "3个月": 1.15,
+    "6个月": 1.35,
+    "1年": 1.45,
+    "2年": 1.65,
+    "3年": 1.95,
+    "5年": 2.0
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/202312/t20231222_24285701.html"
+  },
+  {
+   "date": "2023-09-01",
+   "rates": {
+    "活期": 0.2,
+    "3个月": 1.25,
+    "6个月": 1.45,
+    "1年": 1.55,
+    "2年": 1.85,
+    "3年": 2.2,
+    "5年": 2.25
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/202309/t20230901_23679836.html"
+  },
+  {
+   "date": "2023-06-08",
+   "rates": {
+    "活期": 0.2,
+    "3个月": 1.25,
+    "6个月": 1.45,
+    "1年": 1.65,
+    "2年": 2.05,
+    "3年": 2.45,
+    "5年": 2.5
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/202306/t20230608_23194241.html"
+  },
+  {
+   "date": "2022-09-15",
+   "rates": {
+    "活期": 0.25,
+    "3个月": 1.25,
+    "6个月": 1.45,
+    "1年": 1.65,
+    "2年": 2.15,
+    "3年": 2.6,
+    "5年": 2.65
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/202209/t20220915_21788988.html"
+  },
+  {
+   "date": "2015-10-24",
+   "rates": {
+    "活期": 0.3,
+    "3个月": 1.35,
+    "6个月": 1.55,
+    "1年": 1.75,
+    "2年": 2.25,
+    "3年": 2.75,
+    "5年": 2.75
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201510/t20151023_5824963.html"
+  },
+  {
+   "date": "2015-08-26",
+   "rates": {
+    "活期": 0.35,
+    "3个月": 1.6,
+    "6个月": 1.8,
+    "1年": 2.0,
+    "2年": 2.5,
+    "3年": 3.0,
+    "5年": 3.05
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201508/t20150825_5512289.html"
+  },
+  {
+   "date": "2015-06-28",
+   "rates": {
+    "活期": 0.35,
+    "3个月": 1.85,
+    "6个月": 2.05,
+    "1年": 2.25,
+    "2年": 2.75,
+    "3年": 3.25,
+    "5年": 3.35
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201506/t20150627_5216867.html"
+  },
+  {
+   "date": "2015-05-11",
+   "rates": {
+    "活期": 0.35,
+    "3个月": 2.1,
+    "6个月": 2.3,
+    "1年": 2.5,
+    "2年": 3.0,
+    "3年": 3.5,
+    "5年": 3.75
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201505/t20150510_5002198.html"
+  },
+  {
+   "date": "2015-03-01",
+   "rates": {
+    "活期": 0.35,
+    "3个月": 2.35,
+    "6个月": 2.55,
+    "1年": 2.75,
+    "2年": 3.25,
+    "3年": 3.75,
+    "5年": 4.0
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201502/t20150228_4678960.html"
+  },
+  {
+   "date": "2014-11-22",
+   "rates": {
+    "活期": 0.35,
+    "3个月": 2.6,
+    "6个月": 2.8,
+    "1年": 3.0,
+    "2年": 3.5,
+    "3年": 4.0,
+    "5年": 4.25
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201411/t20141121_4184474.html"
+  },
+  {
+   "date": "2012-07-06",
+   "rates": {
+    "活期": 0.35,
+    "3个月": 2.85,
+    "6个月": 3.05,
+    "1年": 3.25,
+    "2年": 3.75,
+    "3年": 4.25,
+    "5年": 4.75
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201207/t20120705_1887040.html"
+  },
+  {
+   "date": "2012-06-08",
+   "rates": {
+    "活期": 0.44,
+    "3个月": 3.1,
+    "6个月": 3.3,
+    "1年": 3.5,
+    "2年": 4.1,
+    "3年": 4.65,
+    "5年": 5.1
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201206/t20120608_1846662.html"
+  },
+  {
+   "date": "2011-07-07",
+   "rates": {
+    "活期": 0.5,
+    "3个月": 3.1,
+    "6个月": 3.3,
+    "1年": 3.5,
+    "2年": 4.4,
+    "3年": 5.0,
+    "5年": 5.5
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201107/t20110706_1444098.html"
+  },
+  {
+   "date": "2011-04-06",
+   "rates": {
+    "活期": 0.5,
+    "3个月": 2.85,
+    "6个月": 3.05,
+    "1年": 3.25,
+    "2年": 4.15,
+    "3年": 4.75,
+    "5年": 5.25
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201104/t20110405_1347155.html"
+  },
+  {
+   "date": "2011-02-09",
+   "rates": {
+    "活期": 0.4,
+    "3个月": 2.6,
+    "6个月": 2.8,
+    "1年": 3.0,
+    "2年": 3.9,
+    "3年": 4.5,
+    "5年": 5.0
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201102/t20110208_1291781.html"
+  },
+  {
+   "date": "2010-12-26",
+   "rates": {
+    "活期": 0.36,
+    "3个月": 2.25,
+    "6个月": 2.5,
+    "1年": 2.75,
+    "2年": 3.55,
+    "3年": 4.15,
+    "5年": 4.55
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201012/t20101225_1247523.html"
+  },
+  {
+   "date": "2010-10-20",
+   "rates": {
+    "活期": 0.36,
+    "3个月": 1.91,
+    "6个月": 2.2,
+    "1年": 2.5,
+    "2年": 3.25,
+    "3年": 3.85,
+    "5年": 4.2
+   },
+   "url": "https://www.boc.cn/fimarkets/lilv/fd31/201010/t20101020_1170160.html"
+  }
+ ],
+ "abc": {
+  "rates": {
+   "活期": 0.05,
+   "3个月": 0.65,
+   "6个月": 0.85,
+   "1年": 0.95,
+   "2年": 1.05,
+   "3年": 1.25,
+   "5年": 1.3
+  },
+  "date": "2025-05-20"
+ },
+ "rate_change": {},
+ "cd": {
+  "title": "关于发售2026年第一期个人大额存单的公告",
+  "url": "https://www.boc.cn/pbservice/bi2/202607/t20260701_25675691.html",
+  "rates": {
+   "1个月": 0.8,
+   "3个月": 0.8,
+   "6个月": 1.0,
+   "1年": 1.1,
+   "2年": 1.2,
+   "3年": 1.55,
+   "5年": 1.6
+  },
+  "min_amount": 200000,
+  "date": "2026-07-01"
+ },
+ "bonds": [
+  {
+   "year": 2026,
+   "kind": "凭证式",
+   "start": "2026-10-10",
+   "end": "2026-10-19",
+   "items": [
+    {
+     "no": 7,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 8,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2026年第七期和第八期储蓄国债(凭证式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202610/t20261008_25695440.html"
+  },
+  {
+   "year": 2026,
+   "kind": "电子式",
+   "start": "2026-09-10",
+   "end": "2026-09-19",
+   "items": [
+    {
+     "no": 7,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 8,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2026年第七期和第八期储蓄国债(电子式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202609/t20260909_25691275.html"
+  },
+  {
+   "year": 2026,
+   "kind": "凭证式",
+   "start": "2026-08-10",
+   "end": "2026-08-19",
+   "items": [
+    {
+     "no": 5,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 6,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2026年第五期和第六期储蓄国债(凭证式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202608/t20260807_25684192.html"
+  },
+  {
+   "year": 2026,
+   "kind": "电子式",
+   "start": "2026-07-10",
+   "end": "2026-07-19",
+   "items": [
+    {
+     "no": 5,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 6,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2026年第五期和第六期储蓄国债(电子式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202607/t20260708_25678066.html"
+  },
+  {
+   "year": 2026,
+   "kind": "电子式",
+   "start": "2026-06-10",
+   "end": "2026-06-19",
+   "items": [
+    {
+     "no": 3,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 4,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2026年第三期和第四期储蓄国债(电子式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202606/t20260608_25671646.html"
+  },
+  {
+   "year": 2026,
+   "kind": "凭证式",
+   "start": "2026-05-10",
+   "end": "2026-05-19",
+   "items": [
+    {
+     "no": 3,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 4,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2026年第三期和第四期储蓄国债(凭证式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202605/t20260508_25664839.html"
+  },
+  {
+   "year": 2026,
+   "kind": "电子式",
+   "start": "2026-04-10",
+   "end": "2026-04-19",
+   "items": [
+    {
+     "no": 1,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 2,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2026年第一期和第二期储蓄国债(电子式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202604/t20260408_25658656.html"
+  },
+  {
+   "year": 2026,
+   "kind": "凭证式",
+   "start": "2026-03-10",
+   "end": "2026-03-19",
+   "items": [
+    {
+     "no": 1,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 2,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2026年第一期和第二期储蓄国债(凭证式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202603/t20260305_25651927.html"
+  },
+  {
+   "year": 2025,
+   "kind": "电子式",
+   "start": "2025-11-10",
+   "end": "2025-11-19",
+   "items": [
+    {
+     "no": 9,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 10,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2025年第九期和第十期储蓄国债(电子式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202511/t20251107_25560147.html"
+  },
+  {
+   "year": 2025,
+   "kind": "凭证式",
+   "start": "2025-10-10",
+   "end": "2025-10-19",
+   "items": [
+    {
+     "no": 7,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 8,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2025年第七期和第八期储蓄国债(凭证式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202510/t20251009_25516766.html"
+  },
+  {
+   "year": 2025,
+   "kind": "电子式",
+   "start": "2025-09-10",
+   "end": "2025-09-19",
+   "items": [
+    {
+     "no": 7,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 8,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2025年第七期和第八期储蓄国债(电子式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202509/t20250905_25486121.html"
+  },
+  {
+   "year": 2025,
+   "kind": "凭证式",
+   "start": "2025-08-10",
+   "end": "2025-08-19",
+   "items": [
+    {
+     "no": 5,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 6,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2025年第五期和第六期储蓄国债(凭证式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202508/t20250806_25443560.html"
+  },
+  {
+   "year": 2025,
+   "kind": "电子式",
+   "start": "2025-07-10",
+   "end": "2025-07-19",
+   "items": [
+    {
+     "no": 5,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 6,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2025年第五期和第六期储蓄国债(电子式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202507/t20250708_25410547.html"
+  },
+  {
+   "year": 2025,
+   "kind": "电子式",
+   "start": "2025-06-10",
+   "end": "2025-06-19",
+   "items": [
+    {
+     "no": 3,
+     "term": 3,
+     "rate": 1.63
+    },
+    {
+     "no": 4,
+     "term": 5,
+     "rate": 1.7
+    }
+   ],
+   "title": "2025年第三期和第四期储蓄国债(电子式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202506/t20250609_25375571.html"
+  },
+  {
+   "year": 2025,
+   "kind": "凭证式",
+   "start": "2025-05-10",
+   "end": "2025-05-19",
+   "items": [
+    {
+     "no": 3,
+     "term": 3,
+     "rate": 1.93
+    },
+    {
+     "no": 4,
+     "term": 5,
+     "rate": 2.0
+    }
+   ],
+   "title": "2025年第三期和第四期储蓄国债(凭证式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202505/t20250507_25344059.html"
+  },
+  {
+   "year": 2025,
+   "kind": "电子式",
+   "start": "2025-04-10",
+   "end": "2025-04-19",
+   "items": [
+    {
+     "no": 1,
+     "term": 3,
+     "rate": 1.93
+    },
+    {
+     "no": 2,
+     "term": 5,
+     "rate": 2.0
+    }
+   ],
+   "title": "2025年第一期和第二期储蓄国债(电子式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202504/t20250408_25316295.html"
+  },
+  {
+   "year": 2025,
+   "kind": "凭证式",
+   "start": "2025-03-10",
+   "end": "2025-03-19",
+   "items": [
+    {
+     "no": 1,
+     "term": 3,
+     "rate": 1.93
+    },
+    {
+     "no": 2,
+     "term": 5,
+     "rate": 2.0
+    }
+   ],
+   "title": "2025年第一期和第二期储蓄国债(凭证式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202503/t20250306_25286057.html"
+  },
+  {
+   "year": 2024,
+   "kind": "电子式",
+   "start": "2024-11-10",
+   "end": "2024-11-19",
+   "items": [
+    {
+     "no": 9,
+     "term": 3,
+     "rate": 1.93
+    },
+    {
+     "no": 10,
+     "term": 5,
+     "rate": 2.0
+    }
+   ],
+   "title": "2024年第九期和第十期储蓄国债(电子式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202411/t20241107_25192531.html"
+  },
+  {
+   "year": 2024,
+   "kind": "凭证式",
+   "start": "2024-10-10",
+   "end": "2024-10-19",
+   "items": [
+    {
+     "no": 7,
+     "term": 3,
+     "rate": 2.13
+    },
+    {
+     "no": 8,
+     "term": 5,
+     "rate": 2.25
+    }
+   ],
+   "title": "2024年第七期和第八期储蓄国债(凭证式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202410/t20241008_25167928.html"
+  },
+  {
+   "year": 2024,
+   "kind": "电子式",
+   "start": "2024-09-10",
+   "end": "2024-09-19",
+   "items": [
+    {
+     "no": 7,
+     "term": 3,
+     "rate": 2.18
+    },
+    {
+     "no": 8,
+     "term": 5,
+     "rate": 2.3
+    }
+   ],
+   "title": "2024年第七期和第八期储蓄国债(电子式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202409/t20240905_25148418.html"
+  },
+  {
+   "year": 2024,
+   "kind": "凭证式",
+   "start": "2024-08-10",
+   "end": "2024-08-19",
+   "items": [
+    {
+     "no": 5,
+     "term": 3,
+     "rate": 2.18
+    },
+    {
+     "no": 6,
+     "term": 5,
+     "rate": 2.3
+    }
+   ],
+   "title": "2024年第五期和第六期储蓄国债(凭证式)销售公告",
+   "url": "https://www.boc.cn/pbservice/bi2/202408/t20240807_25127257.html"
+  }
+ ],
+ "lpr": [
+  {
+   "date": "2026-10-20",
+   "1Y": 3.0,
+   "5Y": 3.5
+  },
+  {
+   "date": "2026-09-20",
+   "1Y": 3.0,
+   "5Y": 3.5
+  },
+  {
+   "date": "2026-08-20",
+   "1Y": 3.0,
+   "5Y": 3.5
+  }
+ ],
+ "news": [
+  {
+   "title": "2026年10万元资金规划参考：五类常见工具的思路对比与选择路径",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQLVNla0RpMUlrdUFPSzBxRlVBU0lRTkU1UUZXc09ITUtNbWVBSVpDSk9XRm1xOVRZNFgxQ1dDVzBSbFV4UVJiS2tUVWg5aTJ0cVI5T2l6RVI3RFhnYnZkVVRfWmtsRWRWaXBFZGYxTGNiOUlsbXlQSnZ1SzZ4NGRTa0VKZXZ0aXI3ejFjUno0YnpWUy1jb1dvNw?oc=5",
+   "source": "新浪网",
+   "time": "2026-10-20T16:53:00+00:00",
+   "topic": "国债"
+  },
+  {
+   "title": "定期存款、大额存单现“2字头”利率_热点",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1MdndCakZvY0s4aE40TzUtNWN5RVg4NjhXLTVDbzZMVHp4N0toRTVKQklkT3MyaFlQMjRkUUpQY240bHc3SFpyZnFVc25qV1o1REtoS2J6cjZvajlQcTZSNDFkaGhsQkJV?oc=5",
+   "source": "红网",
+   "time": "2026-10-20T12:25:03+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "美元存款利率冲上4%，能冲吗？算清这笔账，别因汇率亏本金",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPWmtPTHF4bURmSDZleHlqN0YtSEhoc3YzczViME9YVEw5Ny1Da3BwdHVhRnFtYlBHVXlWODBDTnhrd1lUcUE4LTVad1FqdnY4bFhCRWJLUlZfZ1BsN0xHZmhyb1ZiX1BlYlFILWk1RFlENktTUU5RZzlvSkdBZmo1bUs1X3Q5aXB6UU1R?oc=5",
+   "source": "搜狐网",
+   "time": "2026-10-20T08:35:50+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "NDV：钱去哪了？复盘美国那 16 年的滞胀与财富磨损史",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE15d0ZDMFdxVlUxWEZZZ3pIVTRDTEZlOE16aXF2a0FBTXVOQ2NraWkteWx1UGQ5YVU3bEU2cTVCcmtCVTZpeEJjVnJZek1wbkJOUFhSbGdCcUl0X0toMTRyT2cxU0QxUklSVkROR2RwQVVVWVZoaDl1dWZuMUVQRDA?oc=5",
+   "source": "PANews",
+   "time": "2026-10-20T08:35:41+00:00",
+   "topic": "国债"
+  },
+  {
+   "title": "大额存单“限量返场”，青岛储户的算盘怎么打",
+   "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBjdDN2VDdFcmRHX3Y1NkdTS1dTaHl6anFMbm5PQ2tGSFlpREFHaXNrWVFuVWdqM3NLNU04VHRBOUxDNlZIUXlTN3ZpSmxKMXM?oc=5",
+   "source": "观海新闻",
+   "time": "2026-10-20T07:29:00+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "大额存单重现 长期存单返场释放稳存款阶段性信号",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1YOGpvMEI2U00xeVllSmVoTDdzMEVEMzVBZWRDZ0Q5MkxDNUlpTTJZVFVDTFhDYVVSRmQ0NWZzamo0bFY0aFVEb3hUNkxoT0xBTXc?oc=5",
+   "source": "搜狐网",
+   "time": "2026-10-20T03:07:00+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "LPR连续17个月“按兵不动”，但未来的“贷款锚”要变了！",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1ycUlUSmppMnFqb3U5Znl6WGhvN25ELWhaR29xblVLWUdlT08zZEo5U19BalBpMV9YRU9nZzVwYW1wdlNRMU95cGxxRTh6Z0JZODBOMTNFZWlidzNwV0M2b1piQjlTSzZ6ZldLdEE2ZEc?oc=5",
+   "source": "金融界",
+   "time": "2026-10-20T02:50:56+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "美元存款利率走高？每经记者实探上海多家银行",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9BYUo5OEtEWjMyZTU5RWhfalNYZHg2Mkd6V1VFWW83RThQaVZQTFY0N2FKUTM4Q2x1LUhtRFVKYW92dEVtb2otN1FLNmxaTlUxOC1Nbmp5T2tIMERqQ3lfSHZCLUR5SWFaQ2I5OUpsQVVxb3hfQmtnbQ?oc=5",
+   "source": "新浪网",
+   "time": "2026-10-19T22:00:41+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "久违了！银行大额存单重回市场",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBXYm8wRWhVUGtaY3ptSHAzU2h2MXFuU2VYNWxJMUpsOUF0b1RsNnFJZFhmTHdEbEI1NllEOW85NU5hdUJVMkozUE1mRDQ0ZU0ya3F4NEE0NC02cWw3RVdSTUZEOXJoY2JBUmpJVXRIc1Q5R284M2c?oc=5",
+   "source": "新浪财经",
+   "time": "2026-10-19T22:00:00+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "日本银行上调基准利率至1.0%，31年来新高…各国央行是否会接连加息",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPbUtZaE4tQ0dBcG1KWXJWNWFvUXVzWDh3WS1KdjY1YlZobmppcVVUMVZycFBQN29CaWtnLTlWd0NfTmdaYzJ5R0xqdGU0X2pYTEhwUWY2THZyaVYweDV3XzlOb05VejE5VE9LeWdzc0poOGZRcDhsYkZfa21GQVVwajdOX0RUNjVPa3FlVG9GeXlodnpmTmNTN2VILU1tdW1m?oc=5",
+   "source": "朝鮮日報中文版",
+   "time": "2026-10-19T20:03:26+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "情暖重阳敬老月 金融护航夕阳红",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFByanZnZkxxZUhuSmNObFJOV3pvOUNjY2J3aHZuUVlsWFRZNTVWbjdtWjluVEJpVzBNWC02ZFVpeUdIZVhTV2xxN3lrUXpOeGw3Z3ZIdEU1Wk4tdWs4MnE2RnBoaHg?oc=5",
+   "source": "华声在线",
+   "time": "2026-10-19T10:05:00+00:00",
+   "topic": "国债"
+  },
+  {
+   "title": "我国柜台债市场的普惠属性、国际比较与政策建议",
+   "url": "https://news.google.com/rss/articles/CBMizARBVV95cUxNQklOYW9BZUdJZkQxNDNWN3JmVm01THRGWlVFdEhNYXRPLXpZMnBhUllLWWszRkVZVnZ6eGMwUnluS2NuVkstT1k0VlZSQklldWxlNTZvVzVYbTNqYnB1Z05EVXBJaXRVNEdxZlJrbnIyQmpQbHdnVGhkbUpoUllCQ0hfVHFLeGx3RFl4Vnktc0VEZ1ViT1RseGZWSzBEM3JLeWQ0ZkJqRjVSSURTbmo1WFFmanU4dDFweFZ1TFN6LU9FZ1U4T3JlVURVenJxaGtYQjVNRk82UzJMbVJkdkgwQlR0UUNRazJmZ0JsQkNSdnZHcmcyV1RudWltWnJRQ2QySTd4Vnd6Njg1TkJxWXRoVkVuMW5YTDdWQjRRU2NPTmM0dm9XZ20ya0JNYXZkTEFYSmJwT0twMThLUWFtZ0x1UkNKYVJVelh3elUwcWFQaEI5cmstbmVPYnAxYkJwV19yenozQ1lQNFVmbmN4N1V4MS1Dc1ZVVERLVEpDREJoZVZEbGhCZ2tEc05wTlJGRF83c1dPQV9BRlJoMGh4enZlVmNVMkQtQnRJdnQ5eVloRENXSk9OUS1sS0FIX2FCbkFRSUEybmctdU5ycnBpOE50ZDNVNnVuQWxrX29vWm04UE94R2E2U1RERGdsbzRoX20wNklKMEZHWVItZU52WGgxUlRPNEJRMUxycWFybXlOLXI2TU9qeVcxWVFkTkM3S3B4SW95eDNVaVRiZm5MOXRGcl8yNkJ0bUZpV21PSDE5OGQ2NXZGQkRaRFJGblQ?oc=5",
+   "source": "新浪财经",
+   "time": "2026-10-19T06:10:44+00:00",
+   "topic": "国债"
+  },
+  {
+   "title": "定存利率普遍上调！多家银行加息揽储，5年期涨幅最猛",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1oWWplTDZRcFBkemRmZ1YxTG5RTU5wZ1lmY0xiaHZUdVZpTlBGaU5ybGpUWDlXcW5EOXpjRzdDRDBaaDQxUll4dmpmT3BFWDBITEhidDRFalpSRk1fR21yaTFn?oc=5",
+   "source": "QQ News",
+   "time": "2026-10-19T05:40:00+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "央妈喊你来兑付国债啦！",
+   "url": "https://news.google.com/rss/articles/CBMioAxBVV95cUxPRS1NNDhyT2RCS21nNExLVDdycTJtVUdqc1ZfUkhvcDJZWDhzSTlBTWJuV2diUjl3c0plUXBZdDBZUFZuZUVvRm13MDFQWjBrVjZSU3Mzc3BGbXBHbzg5bHVydk5aSWJZc1UwNW4td21nVnpEbGhnMnZlZDZsbmVpR3R2ajd1bmVyd0JFNWpsSmdVaU1yZFM5TDFlRHZzeFJyaVJYeTJ4a3pNNG9kcGR3WmFnVUplaEN3OXZjZnZXeG1mb1BlMUpjZXJaQlY3aGVlT3hEUTJXMnlGOUswNTNPNnlaTWlUSWtpZDJyY3hFOUFXTmltemhrU25keE5mbW5jY2hNd2R1MHJma1V6X1lWbWNGTDVjREFOU0dndGFlTUs3N1FSZkhOaDA1TGpqSUpCbFNwSGx1aGNyS1lMWm9tMmNBVlpScUYtUlFYYkwyZlVxUHczak4za1RHa1FHTGU0dEJ6U2tQdnJTekdrOFJVckttQTdYWGtTN3Z3eEN0REFOQmwyV1g0Y3F5R0pDYUY0WFJLMV83TjQzTklDMWhybncxeHhTZW5qcktxa2VUWUdFT01xRjdJQmxTMUJVcUFtdWxtaVl0WGJMUFVod1RYcWhncUtObjdTR0FDakMtdHpfajc1LUNjU0toeHc2N0xkNldzTm45Z241WndhZTZneDBEd3dIbFg0X0JSSTYyOXJydVAwZHpkbmVXSTNGR0dPemY2TzVqZ09obVJYTmRhSFg5YlZfUmE3NjRQTGRSeHUxRWdnVXBaakpITHVpYUIwLWotRW5jWW1VaDM5NkRiLTE0R19obkRiNkVFWUFoSU93ODdxaXc1azdjSFlHaVV5UjNwV0lXWUUtNndLNDE2MGcyWE01U0FIU3JZbTJUTDJRZnVBazRtYjFhTDEtLVg1b0hiVG85emR6RVJ6U25UejA3dFZtNGl4R2g4VlFJRHYzM0ViYUdCcFM4OHZDNDNRZUtzZjVHbVlac1QtVXViMFRwQm1Geld3c1JGbGlMTTlvYUtORVVKTS1XWl85VXZMTFZOVjVHeFJhQUppQkdkSjZaLTcxWUhQTEpkc2Z4MnFkYUhXUlpFOE1YX01kVWk5T3hrV1Ewa0NvVkNoSmFBNjEzeXNZYWdBdTMtZnVjY0tjSFU0dXFNU2NYaDUzQnU4YmJUOEwwbmd1aWNFd2x3R0tCM1J5YS1hZnluZ0hOT0xMdGdrNl9HSmNESjh6N0pmREtwcTcwcVNGTUhNQkx4cGUxRkIxNmxKdmpQTFRLVFh2dTFaVFBSUGFCbjB5NjZVS0t5SUg2NE9acERSTGJpaHlYclN6YW1iZWJGTGZmSGo1RzliUTJyOGxjWDV6NlBSbkpTRnVWRXJtYUpXbHppejYxX3dXTHV6ZEUwRnJZMm1mRVltZS1IQjVmRnAzWkFXYmp5b2tjOW5PaHFPNTlZc3V5eVE1WEg4eF9RcTA4Z2VUWTJrMlNZN0VBQ1QwOUQwR3dVMTRVQlhVdjdWVlhKRHpadFZFaGdLc0RZLVRuQnc3RmhkYnBXT0c3WG5HWXRyZ0lkOG1Gd1kwcFVtb0Q0Nng0VTdSNVNOaW9UbmV6NWlqS3VRQjFWQmI1RkdXMmlDWEFuYTVHVExBcHF6SG9LUy1rWWI0ZXVhTXZpUy1sdlE4SXMyLTBTVWVHVHR2TWppVDZDRWpiNHdIY2dRRnJHTFRPVVd1b0doaFQwOXZwcGJpM19OdDdLTXAzeDBlaHRRRGVWaV82aVhMb29lWmc0UF96MU12UjdaSlQzeXU5a1RPZFBidGdZYUZTZHdNVk05c0xXdGNocHY2OWVac3ZieXZNdjM0UVk3LUx1UHptbTU4SDIwRllCaG1JWEszdXJVeWkzVkRyRVc5a0NlRUNxcVVSRGVOczN4QWZveXIzZHpQUmZoWldjcDM3YmlfM245NW5NeUtwV1F5b2s2OWhRR0VCaWd5RHVjcDBfbDJVNzhNMFhabWFwcWwwUVdpWnJqcURCQWU1Smk0Skk2ZVh0ZERzdGlhaUJYbGtUd3JFN3c0SlJPTWdEMVdCMXV4NUR5MU04RmFuOW1wNDRLenFGeg?oc=5",
+   "source": "手机新浪网",
+   "time": "2026-10-19T03:21:00+00:00",
+   "topic": "国债"
+  },
+  {
+   "title": "大额存单，重出江湖！",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9SdEl5TUVXcmx1VDdQei12bWpEaDRVTm92TXRuWVdEcDhGZVNNdWlHM2d2d2FBOW9sVGozbEJrS0RuMGtibVZ2cFJzYWp4Zm9TSnVtazFsclhkSU9DTk5NSw?oc=5",
+   "source": "搜狐网",
+   "time": "2026-10-19T01:48:00+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "大额存单缘何回归？受到哪些投资者青睐？记者调查",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4zeXVGX09MM2pWUVhMSWVFbWJEbW9tT0RfTEgzMkx1UFctVHJSVkJOWXFST19sSTdxSUN4dUNieXNUM09MOVVMcmo3eUhYclhnMnZ4TGY5UnhfU3pNWVc3UFdEQ0s2YVI3amM0Smxn?oc=5",
+   "source": "新浪财经",
+   "time": "2026-10-18T23:37:59+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "多期限大额存单上新 大额存单缘何重启？",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBUMlB0aXlxMU9EcGw2NUN3em1PdlpwTUV5cXZ2a2hDVTJ5ZVpNb2RqTW5sQmU5TjB3Ync5NDVzUHJQNDhBSV84WVhXblJrWnJoSlVrOFI1cEhaU0JDQTBCSmZvQzZpMV93?oc=5",
+   "source": "中国新闻网",
+   "time": "2026-10-18T23:33:10+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "大额存单缘何回归，受到哪些投资者青睐？",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNc1RUNkE3Tnl0MW50di1Ubk1MQjVfZ1U3bDBpazJULVhvVzdIWFNlei00VjdhSjJIeE1kQVVPaU55aHY2M0J2amNjeVNacVBmb0pLZmdUN3hqOHZuMXlDNHFMbjhxLU8tX2xwd2p0ZldOeTdubmI2VllNajE0ZkJLQTEyQ0hYMWc?oc=5",
+   "source": "新浪财经",
+   "time": "2026-10-18T22:37:22+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "大额存单缘何重启（财经深一度）",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9lemR0NDVKMmZGVE5NNnRVbHAzLW5SRzA3SHJQd19BVnNzeUZxaHNXXzVKV2lqVHBkVmFLY3RndGNsRlN5RWZyajdQb2tIN1U3VzlmVmQxbmVpcmhqTWl0bTFuSS1iV3Azb201ZGpB?oc=5",
+   "source": "人民网",
+   "time": "2026-10-18T22:08:00+00:00",
+   "topic": "国债"
+  },
+  {
+   "title": "定期存款和大额存单区别 门槛利率转让三点不同",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPU2JjNnhnc0R0d3lkRHB2anhIMzdPSmpNZlZRU0pxaER1akdiSlhJSkc5WEhSc01YZExTblhybnJvLS1ucWwtaHdIOWpjaVFUaGxYbE9xWl9aX05KcHJEWEV0QlRiemFlMEgxTVBqb1JtS0RfZDhfU3NhWnlJZ2N5LXVNM0k?oc=5",
+   "source": "新浪网",
+   "time": "2026-10-18T17:06:49+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "【财富周刊】多家银行上调存款利率，新模式浮动费率基金持续扩容",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9BNnhKY29xbllQZlQwM2g0NDNNX0J0OW9pTnlMOUVzUkVKekhyTEtNQkx5ZDVuVzRMMG1HRERSVDNQeVFvUnNzdW41eVNpdU1KNGc1N0J5NG8?oc=5",
+   "source": "Jiemian.com",
+   "time": "2026-10-18T14:22:40+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "存款利率普遍上调 5年期涨幅最突出",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPSlA1V2N5a0NSODJrWUhIZW9CX05SQTlLM3V4S3pVYmVBNkhSQWhyMEVMUE1KLWpkem9ST29femZPdFVmQ3ZhdGtBdjVOeVhTX0pueGdTdzZmRXVzWUQ2ZHEzRXpCdWQtaWNMSkxuOUJhajk1Y2lYTXFqenV0c2hrNkNnY3E?oc=5",
+   "source": "新浪网",
+   "time": "2026-10-18T11:59:24+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "存款利率普遍上调了",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9hYk95T0Z2bHNWUlpiZ01tdEFWb0hNVmZtMExmNkc3VFdZZkREV1Awa2dzb1JPS0ZuZ29TM1dxcUx6QXR4RkhWcEZ5d1JMNUZRUktPbVl4bFJxV3dDR0hOQmV0Ri1mYXpTWnR2QWRndjZfTWE5UXc?oc=5",
+   "source": "新浪财经",
+   "time": "2026-10-18T10:06:59+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "部分银行定期存款利率2.1%，但要求18万起存，值得存吗?",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQaEdqLTNsbVRWN3pjdTRrc29oSGJ5LWxLd2xrSHhDQ1l0UWdVV2UwZlJSd2gwRkdkTXB6NXFlOVJJemtnSUQ4OHdmRE5odU1kaDZHT1RkV2l5YXRsRUFIUVNFSEJoQ2xIRzZEVXhRdUEzemdseFdUdHNjbXFGcHhTLVpiS1YzUjQ?oc=5",
+   "source": "新浪财经",
+   "time": "2026-10-18T03:09:46+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "2%利率大额存单回归 中小行、外资行四季度揽储模式开启",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBIMlFRT09wUWF3QTlDRmRjUEhrNzNZamNYa2dKTWpxbVgxcS1MMGlBNVdZNUZQSVUzSDFoa2NGdzFMUjhhTUVSWC1ia2ZJd2owRDZFM2VoTmFXWWx1V1FqUEJR?oc=5",
+   "source": "手机网易网",
+   "time": "2026-10-17T15:58:33+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "银行又开始抢长期存款了 5年期利率显著上调",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBETjYyU0h5TmxsYTFYZURQLXktLU00eDlDdnpFblRKakJfM3h6OWw1SlRFYmpzRlY0dGZ3bEotMHNEVkNBUmU2ZUZXclVfLVBqSEVXV205QWc5NUFIREdpQ0xJdGN6aDdQNHFqZnpmWTc?oc=5",
+   "source": "中华网",
+   "time": "2026-10-17T10:51:28+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "存款利率分化：部分股份行悄然下调 降多升少成主基调",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5CS2hLQXpTSV9PWkJ1MWprQzJ2ek81NHdtREsxUjZ0bGcxNGtTdFdfUDBvRk9zbHNjSThBWl8zNFROUVEybk4yMDd4MFl4VjdxYVlZcDY2dFJfU3pYQ3E4VGU5aVo5bFZ0Tk95cjRrZFA?oc=5",
+   "source": "中华网",
+   "time": "2026-10-17T10:47:35+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "5年期存款利率高达2.1%，银行又开始抢长期存款了",
+   "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8yMFFZNE5VUTd3djJIMmVrSU5aYlpDekNLMUNzb0FhUFU3cXRMaFBEY3hrRXdBOTRRYndHSnlya2UxLXQ2ZDZjV29scjAzZERTUkFkQQ?oc=5",
+   "source": "搜狐网",
+   "time": "2026-10-17T09:02:00+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "存款利率分化：部分股份行悄然下调，小银行逆势抬升",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOY2VfRGlEMmptQ1l5UkFWVUV6UHgyMDZWRWlKNV96M3NURzU0NHJkMmozV2pWck9KVzRUeV9IdklxTUE5ZHRVN2NzQXZDcWRlR1p5b0lubWJkSmZ0SVRvVjZaNVBGaU5ZMi1wOXNmTFkxWWJyakpUSnJrR0k1RjdQTHpYTWtyTHRn?oc=5",
+   "source": "搜狐",
+   "time": "2026-10-17T08:07:00+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "存款大局已定！2026年10月起，银行存款市场或将迎来5大变化！",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9OZGtSbGpnZExFZVRoeW5PVmhGM2J3c195SGttYk9IbXRrS3lGRHVfY1RPSFZ2MmFxZXZZTFpnM2daZXRBa3EtV0Z5OHlGNHVrWlZfV0RFZUN0UHNqelZ3RTd3?oc=5",
+   "source": "QQ News",
+   "time": "2026-10-17T07:07:00+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "不少储户坐不住了？存款正出现4方面调整，已经存上的钱该怎么办",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1DZE15eS1pdVRSQV9VMW5hdGpIZVoyTUdYUlhyLXdEenJkS0ZlaEZiNWNkVnNibjVWb3lMMWxVQ1lNZ1hxZjg0cmM0aFRHZzNSZTY0ZFdR?oc=5",
+   "source": "QQ News",
+   "time": "2026-10-17T06:15:00+00:00",
+   "topic": "国债"
+  },
+  {
+   "title": "2026年10月17日，农业银行最新存款利率来了！ 存10万三年能拿多少利息？",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9qY0xsR3IwekxxUVB3bk9tOTZyX2hWeTB4dnkybjRIdkNuQUMzVXVtY2VsbUJfTjh4VkJ0QVdxaGxjdXRUWnlEenlQdVFNLTExVzNlRWFn?oc=5",
+   "source": "腾讯新闻",
+   "time": "2026-10-17T06:04:00+00:00",
+   "topic": "国债"
+  },
+  {
+   "title": "多家银行存款利息涨了，普通人该不该跟着多存钱？",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5QdUVQS2o5U3FmZk1jeTI2T2Zod2JvTzVnazliMndSdmdoN3A3dWV6UmtrQXV2WEJyLVljcnlwRDNGVklKaFNLQTJod1Q1WGg2c0k3ZjFn?oc=5",
+   "source": "QQ News",
+   "time": "2026-10-17T05:36:00+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "存款利率普遍上调",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1kN2Q1Rk1jRUZTUHJzTWtKZzJpTk85anBSLTRFUm5KdWZoZ0Q0dGVqTEZ5X0t5U2xTeFdQcUV5SXBMcllveFBQcmdGSmNvb1cwVVZZMnVB?oc=5",
+   "source": "QQ News",
+   "time": "2026-10-17T03:26:00+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "2026年1.3万亿超长期特别国债全部发行完毕：8000亿元超长期特别国债用于“两重”建设，2500亿元支持消费品以旧换新，2000亿元支持大规模设备更新，500亿元用于支持财政金融协同促内需一揽子政策– 智慧城市行业分析",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQX0hUU0ZMS3FZcTBwXzMzLWJLLUJOZVVUc2lZVlZXWUl5X21BZm9ZV2RiVzluYmlsOXVmeDhabGNFVFJ3UVRqZjRvM2xIZ0dpeEFZNTZSZDM0TDBGRFY3RDN3NUJSTGE5bjhld1BTNEJsazlsM0dfZmR6LXFndGRkWldXMU1hUzR3RkNDVFBXZVNxVl9teTlfT3V6RGk0OExIS0t1allDZDFHOWIyR2c?oc=5",
+   "source": "智慧城市行业分析",
+   "time": "2026-10-17T03:23:00+00:00",
+   "topic": "国债"
+  },
+  {
+   "title": "存款利率开始涨了，大额存单重回2%，为什么国有大行却按兵不动？",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1xOWxhcHY3Mm5IZTZCcS1fUER4cEJyelBoRXo4TlJ5UVBzZXJTS0NSVlhkZm5PdkdvRHgyS2lKanZGOGNYeFp0NHZFTDhYNmFDUl82dEx3?oc=5",
+   "source": "QQ News",
+   "time": "2026-10-17T02:03:00+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "5年期存款停售后，存量到期可自动转存为3年期？记者调查：有银行回应称存期不变，但自动转存利率与3年期定存利率相同",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBMS196SmFXeUZCa2dib010ZEFxN3ZzYUJHVGhUczJTRDdzM0xsd2xKX255Qmw1VVpoc1JxeEI2M3daNDhWQUY5SWEyQldSMXlIVm50cDF3?oc=5",
+   "source": "QQ News",
+   "time": "2026-10-16T23:28:00+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "存款大局定下了！若无意外的话，26年银行存款利率将迎来5大变化",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5CUkpBN0hUX28wMlZnbEJnOW1VcHRMNmtjb3cyMWNNdVJodE1oa3NwMXhhdXJKc2w4d3E5VzhDZVJTY29icHdqbWt0UTlzMjd0U3U0?oc=5",
+   "source": "搜狐网",
+   "time": "2026-10-16T11:41:00+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "外资行加码大额存单，能闭眼冲吗？",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQQWV2Q240dVBkc3dxbXU5UDVIazEwNllCSHgxSHk2aVJJX01wR1FGQ2RrU3UyT0E4X0x3SG8xQ09kSmFLeVQxZndHbnBxSTZRZE9pWHN2Ny00cGUxcktjZUFTUmNackhQRGpFNjVYR3RrVHBQVC1ENlpSYldLM0wyczZoMA?oc=5",
+   "source": "新浪网",
+   "time": "2026-10-16T08:57:00+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "银行存款大局已定明后两年，存款超过50万的家庭，要注意了",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBSdjlFQlU0dkg4NlhJUnpNeTZZTXg3cG14N3J4S2pUdnp0VW4taUpySU4yeFhERk9fQXIzUWNrdDZFV3JYOFZlbmUtWXptbTJKOENoWXl3?oc=5",
+   "source": "腾讯新闻",
+   "time": "2026-10-16T08:37:00+00:00",
+   "topic": "国债"
+  }
+ ],
+ "others": {
+  "updated": "2026-10-21",
+  "note": "第三方文章整理的常见挂牌区间，各行、各地区、新老资金差异大，活动价通常有新客 / 新资金 / 起存金额等条件，以银行网点或 App 为准。",
+  "groups": [
+   {
+    "name": "股份制银行",
+    "examples": "招商、中信、浦发、兴业、光大、平安等",
+    "rates": {
+     "1年": 1.15,
+     "2年": 1.2,
+     "3年": 1.3,
+     "5年": 1.35
+    },
+    "range": {
+     "3年": [
+      1.3,
+      1.85
+     ]
+    },
+    "remark": "多数三年期约 1.30%；渤海、浙商、恒丰等少数股份行三年期可到 1.85% 左右"
+   },
+   {
+    "name": "城商行 / 农商行",
+    "examples": "杭州银行、吉林银行等地方银行",
+    "rates": {
+     "3年": 1.75,
+     "5年": 1.75
+    },
+    "range": {
+     "3年": [
+      1.6,
+      2.0
+     ]
+    },
+    "remark": "分化大，三年期常见 1.6%~1.9%，个别活动价约 2.0%；存在三年期高于五年期的倒挂"
+   }
+  ],
+  "sources": [
+   {
+    "name": "腾讯新闻 · 2026-10-13 各大银行定期存款利息",
+    "url": "https://news.qq.com/rain/a/20261013A098TI00"
+   },
+   {
+    "name": "腾讯新闻 · 2026 年 10 月全国各大银行存款利率一览",
+    "url": "https://news.qq.com/rain/a/20261001A0CN3000"
+   },
+   {
+    "name": "新浪财经 · 2026 各大银行利率全梳理",
+    "url": "https://cj.sina.com.cn/articles/view/7879776354/1d5abd86201901lbgs"
+   }
+  ]
+ },
+ "sources": [
+  {
+   "name": "中国银行 利率表",
+   "ok": true,
+   "updated": "2026-10-21T10:24:28+08:00",
+   "count": 20
+  },
+  {
+   "name": "农业银行 利率表",
+   "ok": true,
+   "updated": "2026-10-21T10:24:28+08:00"
+  },
+  {
+   "name": "中国银行 国债/大额存单公告",
+   "ok": true,
+   "updated": "2026-10-21T10:24:28+08:00",
+   "count": 21
+  },
+  {
+   "name": "外汇交易中心 LPR",
+   "ok": true,
+   "updated": "2026-10-21T10:24:28+08:00"
+  },
+  {
+   "name": "Google News",
+   "ok": true,
+   "updated": "2026-10-21T10:24:28+08:00"
+  }
+ ]
+}
