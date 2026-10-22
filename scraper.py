@@ -116,7 +116,9 @@ def parse_bond(url, title, t):
         items.append({"no": cn_num(no), "term": cn_num(term), "rate": float(rate)})
     if not items:
         return None
-    return {"year": year, "kind": kind, "start": start, "end": end, "items": items, "title": title, "url": url}
+    body = re.search(r"尊敬的客户[:：]?\s*(.*?特此公告)", t, re.S)      # 公告正文，给详情页展示
+    return {"year": year, "kind": kind, "start": start, "end": end, "items": items, "title": title, "url": url,
+            "text": re.sub(r"\s+", " ", body.group(1)).strip()[:800] if body else ""}
 
 
 def parse_cd(url, title, t):
@@ -143,7 +145,7 @@ def boc_bonds_and_cd(old):
     for url, title in notices:
         if "储蓄国债" not in title or "销售公告" not in title:
             continue
-        if url in known:
+        if url in known and "text" in known[url]:          # 旧数据没有正文的重新解析一次
             bonds.append(known[url])
             continue
         try:

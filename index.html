@@ -178,7 +178,9 @@
     @media (max-width: 980px) {
       .layout { grid-template-columns: minmax(0, 1fr); }
       .aside { position: static; }
-      .nav { display: none; }
+      .topbar-inner { flex-wrap: wrap; row-gap: 6px; }
+      .nav { order: 10; width: 100%; margin-left: -8px; overflow-x: auto; scrollbar-width: none; }   /* 手机上导航挪到第二行，可横滑 */
+      .nav a { white-space: nowrap; }
     }
     @media (max-width: 760px) {
       .topbar-inner { padding: 10px 16px; }
@@ -194,6 +196,94 @@
       th, td { padding: 9px 10px; }
       .next .cd { font-size: 30px; }
     }
+    /* ── 详情抽屉 + 列表页（通用组件 kit：电脑右侧滑出，手机底部升起；地址 #/item/类型/id、#/list/key） ── */
+    :root { --kit-bg: var(--bg, #0b0a10); --kit-panel: var(--panel, var(--card, rgba(255,255,255,.04))); --kit-line: var(--line, var(--sep, rgba(255,255,255,.08)));
+      --kit-line2: var(--line-2, rgba(255,255,255,.14)); --kit-t1: var(--text-1, #f1eff7); --kit-t2: var(--text-2, #a39fb3); --kit-t3: var(--text-3, #6b677a);
+      --kit-accent: var(--accent, #a3e635); --kit-hover: var(--hover, rgba(255,255,255,.05)); }
+    .kit-mask { position: fixed; inset: 0; z-index: 90; background: rgba(0,0,0,.38); display: none; }
+    .kit-mask.open { display: block; }
+    .kit-sheet { position: absolute; top: 12px; right: 12px; bottom: 12px; width: clamp(440px, 42vw, 620px); max-width: calc(100vw - 24px);
+      display: flex; flex-direction: column; overflow: hidden; color: var(--kit-t1); border-radius: 18px;
+      background: linear-gradient(var(--kit-panel), var(--kit-panel)), var(--kit-bg); box-shadow: 0 0 0 1px var(--kit-line2), 0 24px 60px rgba(0,0,0,.45);
+      animation: kit-in .24s ease-out; }
+    @keyframes kit-in { from { transform: translateX(40px); opacity: 0; } }
+    .kit-x { position: absolute; top: 12px; right: 12px; z-index: 3; width: 32px; height: 32px; border-radius: 50%; border: 0; cursor: pointer;
+      background: rgba(0,0,0,.5); color: #fff; font-size: 15px; display: grid; place-items: center; }
+    .kit-scroll { flex: 1; overflow-y: auto; overscroll-behavior: contain; }
+    .kit-cover { aspect-ratio: 16/9; background: var(--kit-hover) center / cover no-repeat; position: relative; }
+    .kit-cover.tall { aspect-ratio: auto; height: 280px; background-size: contain; background-color: #000; }
+    .kit-cover.ph { display: grid; place-items: center; font-size: 56px; aspect-ratio: 16/6; }
+    .kit-head { padding: 18px 20px 4px; display: flex; gap: 14px; align-items: flex-start; }
+    .kit-head .kit-thumb { flex-shrink: 0; width: 64px; height: 64px; border-radius: 14px; background: var(--kit-hover) center / cover no-repeat;
+      display: grid; place-items: center; font-size: 28px; overflow: hidden; }
+    .kit-head .kit-t { flex: 1; min-width: 0; padding-right: 30px; }
+    .kit-cover + .kit-head .kit-t { padding-right: 0; }
+    .kit-head h2 { font-size: 19px; font-weight: 800; line-height: 1.35; letter-spacing: -0.01em; }
+    .kit-sub { color: var(--kit-t2); font-size: 13px; margin-top: 4px; }
+    .kit-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .kit-tags span { font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 6px; background: var(--kit-hover); color: var(--kit-t2); }
+    .kit-big { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+    .kit-big b { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+    .kit-body { padding: 4px 20px 20px; }
+    .kit-sec { padding-top: 16px; }
+    .kit-sec + .kit-sec { margin-top: 6px; border-top: 1px solid var(--kit-line); }
+    .kit-sec h4 { font-size: 14.5px; font-weight: 700; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+    .kit-sec h4 small { font-size: 12px; color: var(--kit-t3); font-weight: 500; }
+    .kit-kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
+    .kit-kv div { background: var(--kit-hover); border-radius: 10px; padding: 8px 11px; min-width: 0; }
+    .kit-kv small { display: block; font-size: 11px; color: var(--kit-t3); }
+    .kit-kv b { display: block; font-size: 14px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+    .kit-p { font-size: 13.5px; line-height: 1.75; color: var(--kit-t2); white-space: pre-line; }
+    .kit-rows { display: flex; flex-direction: column; }
+    .kit-row { display: flex; gap: 10px; align-items: center; padding: 9px 0; border-top: 1px solid var(--kit-line); font-size: 13px; text-decoration: none; color: inherit; }
+    .kit-row:first-child { border-top: 0; }
+    .kit-row[data-kit-go], a.kit-row { cursor: pointer; }
+    .kit-row[data-kit-go]:hover .kit-rt, a.kit-row:hover .kit-rt { color: var(--kit-accent); }
+    .kit-row .kit-rt { flex: 1; min-width: 0; line-height: 1.45; }
+    .kit-row .kit-rm { color: var(--kit-t3); font-size: 12px; white-space: nowrap; }
+    .kit-row img, .kit-row .kit-ri { width: 54px; height: 40px; border-radius: 6px; object-fit: cover; flex-shrink: 0; background: var(--kit-hover); }
+    .kit-acts { flex-shrink: 0; display: flex; gap: 10px; padding: 12px 20px 16px; border-top: 1px solid var(--kit-line); }
+    .kit-acts a, .kit-acts button { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 12px; border-radius: 11px;
+      font: inherit; font-size: 13.5px; font-weight: 700; text-decoration: none; cursor: pointer; border: 1px solid var(--kit-line2); color: var(--kit-t1); background: transparent; }
+    .kit-acts .pri { background: var(--kit-accent); border-color: var(--kit-accent); color: #111; }
+    .kit-acts a:hover, .kit-acts button:hover { filter: brightness(1.08); }
+    /* 列表页 */
+    .kit-lhead { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .kit-back { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--kit-line2); background: transparent; color: var(--kit-t1);
+      font-size: 20px; cursor: pointer; display: grid; place-items: center; flex-shrink: 0; }
+    .kit-back:hover { background: var(--kit-hover); }
+    .kit-lhead h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+    .kit-lhead small { color: var(--kit-t3); font-size: 12.5px; margin-left: 2px; }
+    .kit-lbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+    .kit-chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+    .kit-chips a, .kit-chips button { padding: 5px 12px; border-radius: 8px; background: var(--kit-hover); color: var(--kit-t2); font: inherit; font-size: 13px;
+      font-weight: 600; white-space: nowrap; border: 0; cursor: pointer; text-decoration: none; }
+    .kit-chips .on { background: var(--kit-t1); color: var(--kit-bg); }
+    .kit-chips small { opacity: .6; margin-left: 4px; font-weight: 500; }
+    .kit-sel { padding: 6px 10px; border-radius: 9px; border: 1px solid var(--kit-line2); background: transparent; color: var(--kit-t1); font: inherit; font-size: 12.5px; font-weight: 600; }
+    .kit-sel option { background: var(--kit-bg); }
+    .kit-more { display: block; margin: 16px auto 0; padding: 9px 22px; border-radius: 10px; border: 1px solid var(--kit-line2); background: transparent;
+      color: var(--kit-t1); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
+    .kit-more:hover { background: var(--kit-hover); }
+    .kit-morelink { font-size: 13px; font-weight: 600; color: var(--kit-t2); text-decoration: none; white-space: nowrap; cursor: pointer; }
+    .kit-morelink:hover { color: var(--kit-t1); }
+    [data-kit-item] { cursor: pointer; }
+    @media (max-width: 760px) {
+      .kit-sheet { top: auto; left: 0; right: 0; bottom: 0; width: 100%; max-width: none; height: 86vh; border-radius: 18px 18px 0 0; animation: kit-up .26s ease-out; }
+      @keyframes kit-up { from { transform: translateY(30%); opacity: .5; } }
+      .kit-head { padding: 16px 16px 4px; } .kit-body { padding: 4px 16px 18px; } .kit-acts { padding: 10px 16px 16px; }
+      .kit-cover.tall { height: 220px; }
+      .kit-head .kit-thumb { width: 46px; height: 46px; border-radius: 12px; font-size: 22px; }
+      .kit-head h2 { font-size: 17.5px; }
+      .kit-big b { font-size: 24px; }
+      .kit-lhead h2 { font-size: 19px; }
+    }
+    /* 可点开详情的元素 */
+    tr[data-kit-item]:hover td, .mini-row[data-kit-item]:hover { background: var(--hover); }
+    .kpi[data-kit-item]:hover { box-shadow: 0 0 0 1px var(--line-2); }
+    .mini-row[data-kit-item] { border-radius: 6px; }
+    h2.sec .kit-morelink { margin-left: auto; }
+    td.go { color: var(--text-3); text-align: right; }
   </style>
 </head>
 <body>
@@ -215,6 +305,134 @@
   </div>
 
 <script>
+// ── kit：详情抽屉 + 列表页路由（各站通用，内联在页面里）──
+// 用法：
+//   KIT.item('news', id => ({ title, sub, cover, thumb, tags:[], big, body:'<div class="kit-sec">…</div>', acts:[{text, href, pri}] }))
+//   KIT.list('news', (param, query) => { … 把列表页 HTML 写进容器 … })
+//   条目元素加 data-kit-item="news/<id>" 即可点击打开详情；「查看更多」写成 <a href="#/list/news">
+//   站点首页渲染函数里先调用 KIT.route() —— 返回 true 表示当前是列表页（已渲染），首页不用再渲染
+const KIT = (() => {
+  const items = {}, lists = {};
+  let mask, homeY = 0, fromHome = 0, lastHash = location.hash, onHome = null, listBox = null;
+  const kesc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const parse = h => {
+    const m = (h === undefined ? location.hash : h).match(/^#\/(item|list)\/([^?]+?)(?:\?(.*))?$/);
+    if (!m) return null;
+    const [type, ...rest] = m[2].split('/');
+    return { kind: m[1], type: decodeURIComponent(type), id: rest.map(decodeURIComponent).join('/'), q: new URLSearchParams(m[3] || '') };
+  };
+  function ensure() {
+    if (mask) return;
+    mask = document.createElement('div');
+    mask.className = 'kit-mask';
+    mask.innerHTML = '<div class="kit-sheet" role="dialog" aria-modal="true"></div>';
+    document.body.appendChild(mask);
+    mask.addEventListener('click', e => { if (e.target === mask || e.target.closest('[data-kit-close]')) close(); });
+  }
+  function render(d) {
+    ensure();
+    const cover = d.cover ? `<div class="kit-cover ${d.coverTall ? 'tall' : ''}" style="background-image:url('${kesc(d.cover).replace(/'/g, '%27')}')"></div>`
+      : d.coverIcon ? `<div class="kit-cover ph" style="background:${d.coverBg || 'var(--kit-hover)'}">${d.coverIcon}</div>` : '';
+    const thumb = !d.cover && !d.coverIcon && (d.thumb || d.thumbIcon)
+      ? `<div class="kit-thumb" style="${d.thumb ? `background-image:url('${kesc(d.thumb).replace(/'/g, '%27')}')` : ''}${d.thumbBg ? `;background-color:${d.thumbBg}` : ''}">${d.thumb ? '' : d.thumbIcon}</div>` : '';
+    const acts = (d.acts || []).filter(a => a && (a.href || a.onclick));
+    mask.firstElementChild.innerHTML = `<button class="kit-x" data-kit-close aria-label="关闭">✕</button>
+      <div class="kit-scroll">${cover}
+        <div class="kit-head">${thumb}<div class="kit-t"><h2>${kesc(d.title)}</h2>${d.sub ? `<div class="kit-sub">${d.sub}</div>` : ''}
+          ${(d.tags || []).filter(Boolean).length ? `<div class="kit-tags">${d.tags.filter(Boolean).join('')}</div>` : ''}${d.big ? `<div class="kit-big">${d.big}</div>` : ''}</div></div>
+        <div class="kit-body">${d.body || ''}</div></div>
+      ${acts.length ? `<div class="kit-acts">${acts.map((a, i) => a.href
+        ? `<a class="${a.pri || (i === 0 && acts.length < 3) ? 'pri' : ''}" href="${kesc(a.href)}" ${a.self ? '' : 'target="_blank" rel="noopener"'}>${a.text}</a>`
+        : `<button class="${a.pri ? 'pri' : ''}" data-kit-act="${i}">${a.text}</button>`).join('')}</div>` : ''}`;
+    acts.forEach((a, i) => { if (!a.href) { const b = mask.querySelector(`[data-kit-act="${i}"]`); if (b) b.onclick = a.onclick; } });
+    mask.querySelector('.kit-scroll').scrollTop = 0;
+    mask.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  // 打开详情：写进地址（可分享；浏览器返回 = 关闭）
+  function open(key) {
+    const target = '#/item/' + key;
+    if (location.hash === target) return show(parse(target));
+    ensure();
+    if (parse()?.kind === 'item') history.replaceState(history.state, '', target);
+    else { mask.dataset.base = location.hash; history.pushState({ kit: 1 }, '', target); }
+    lastHash = target;
+    show(parse(target));
+  }
+  function show(r) {
+    const fn = items[r.type];
+    const d = fn && fn(r.id, r.q);
+    if (!d) { close(true); return false; }
+    render(d);
+    return true;
+  }
+  function close(silent) {
+    if (!mask || !mask.classList.contains('open')) return;
+    mask.classList.remove('open');
+    document.body.style.overflow = '';
+    if (!silent && parse()?.kind === 'item') {
+      if (history.state && history.state.kit) history.back();          // 从页面里点开的：退回去
+      else { history.replaceState(null, '', mask.dataset.base || location.pathname + location.search); lastHash = location.hash; }   // 直接打开的分享链接
+    }
+  }
+  // 当前地址是列表页时渲染列表页并返回 true；首页时返回 false
+  function route(box) {
+    if (box) listBox = box;
+    const r = parse();
+    if (r && r.kind === 'list' && lists[r.type]) { lists[r.type](r.id, r.q, listBox); return true; }
+    return false;
+  }
+  // 列表页的公共外壳：返回按钮 + 标题 + 子分类 + 排序
+  function shell({ title, note, chips, sort, sortVal, body, more }) {
+    return `<div class="kit-lhead"><button class="kit-back" data-kit-back title="返回">‹</button><h2>${kesc(title)}</h2>${note ? `<small>${note}</small>` : ''}</div>
+      ${chips || sort ? `<div class="kit-lbar"><div class="kit-chips">${(chips || []).map(c => `<a class="${c.on ? 'on' : ''}" href="${kesc(c.href)}">${kesc(c.text)}${c.count != null ? `<small>${c.count}</small>` : ''}</a>`).join('')}</div>
+        ${sort ? `<select class="kit-sel" data-kit-sort>${sort.map(([v, n]) => `<option value="${kesc(v)}" ${v === sortVal ? 'selected' : ''}>${kesc(n)}</option>`).join('')}</select>` : ''}</div>` : ''}
+      ${body}${more ? `<button class="kit-more" data-kit-more>${more}</button>` : ''}`;
+  }
+  function init(home) {
+    onHome = home;
+    document.addEventListener('click', e => {
+      const t = e.target.closest('[data-kit-item],[data-kit-go],[data-kit-back]');
+      if (!t) return;
+      const inner = e.target.closest('a[href],button,input,select,label,summary');   // 卡片里的其它按钮 / 链接（关注、复制…）优先
+      if (inner && inner !== t && t.contains(inner)) return;
+      e.preventDefault();
+      if (t.dataset.kitBack !== undefined) { fromHome && history.length > fromHome ? history.go(-fromHome) : (location.hash = ''); return; }
+      open(t.dataset.kitItem || t.dataset.kitGo);
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    window.addEventListener('hashchange', () => {
+      const r = parse();
+      let was = parse(lastHash), steps = 1;
+      if (was && was.kind === 'item') {                                 // 从详情离开
+        const base = mask && mask.dataset.base !== undefined ? mask.dataset.base : '';
+        if (location.hash === base) { lastHash = location.hash; close(true); return; }   // 只是关掉详情，底下页面不动
+        was = parse(base); steps = 2;                                   // 在详情里点了别的列表：按详情底下那页算，返回要退两步
+      }
+      lastHash = location.hash;
+      if (r && r.kind === 'item') { show(r); return; }
+      close(true);
+      const wasHome = !was;
+      if (r && r.kind === 'list') {
+        if (wasHome) { homeY = scrollY; fromHome = steps; }
+        onHome && onHome();
+        if (wasHome || was.type !== r.type) scrollTo(0, 0);
+      } else {
+        onHome && onHome();
+        if (fromHome) { scrollTo(0, homeY); fromHome = 0; }
+      }
+    });
+    // 直接打开带 #/item/ 的链接（比如大屏跳过来）：页面数据读完后由站点调用 KIT.boot()
+  }
+  function boot() { const r = parse(); if (r && r.kind === 'item') show(r); }
+  return { item: (t, fn) => (items[t] = fn), list: (t, fn) => (lists[t] = fn), open, close, route, shell, init, boot, parse, esc: kesc,
+    // 小工具：详情里的键值格、段落、关联列表
+    kv: rows => { const r = rows.filter(x => x && x[1] != null && x[1] !== ''); return r.length ? `<div class="kit-kv">${r.map(([k, v]) => `<div><small>${kesc(k)}</small><b title="${kesc(v)}">${kesc(v)}</b></div>`).join('')}</div>` : ''; },
+    sec: (title, html, note) => html ? `<div class="kit-sec"><h4>${title}${note ? `<small>${note}</small>` : ''}</h4>${html}</div>` : '',
+    p: t => t ? `<p class="kit-p">${kesc(t)}</p>` : '',
+  };
+})();
+
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const store = {
@@ -272,6 +490,8 @@ function channels(term) {
 
 // ── 视图 ──
 function render() {
+  renderAside();
+  if (KIT.route($('#main'))) return;                     // #/list/… 列表页
   const dep = D.deposit, br = bondRates(), cd = D.cd, nb = nextBond();
   const stableDays = daysBetween(dep.date, todayISO());
   const lpr = D.lpr?.[0];
@@ -286,10 +506,10 @@ function render() {
       ${ch ? `<div class="alert"><b>调息提醒</b>：中国银行发布了 ${esc(ch.date)} 起执行的新存款利率表，三年期 ${fmtRate(prev?.rates['3年'])} → <b>${fmtRate(dep.rates['3年'])}</b>。</div>` : ''}
     </section>
     <div class="kpis">
-      <div class="panel kpi" style="--c:var(--bank)"><span class="k">大行 3 年定期</span><span class="v">${dep.rates['3年'].toFixed(2)}<small>%</small></span><span class="s">${md(dep.date)}起执行 · 已 ${stableDays} 天未调</span></div>
-      <div class="panel kpi" style="--c:var(--cd)"><span class="k">大额存单 3 年</span><span class="v">${cd?.rates['3年']?.toFixed(2) ?? '—'}<small>%</small></span><span class="s">中行常规 · 20 万起</span></div>
-      <div class="panel kpi" style="--c:var(--bond)"><span class="k">储蓄国债 3 / 5 年</span><span class="v">${br[3]?.rate.toFixed(2) ?? '—'}<small>/ ${br[5]?.rate.toFixed(2) ?? '—'}%</small></span><span class="s">免利息税 · 发行即抢光</span></div>
-      <div class="panel kpi" style="--c:var(--accent-2)"><span class="k">下期国债</span><span class="v">${nbText}</span><span class="s">${nb.status === 'live' ? `${md(nb.bond.start)}–${md(nb.bond.end)} · ${nb.bond.kind}` : `${md(nb.date)} ${nb.status === 'expected' ? '（预计）' : '开售'}`}</span></div>
+      <div class="panel kpi" style="--c:var(--bank)" data-kit-item="rate/0"><span class="k">大行 3 年定期</span><span class="v">${dep.rates['3年'].toFixed(2)}<small>%</small></span><span class="s">${md(dep.date)}起执行 · 已 ${stableDays} 天未调</span></div>
+      <div class="panel kpi" style="--c:var(--cd)" data-kit-item="cd/0"><span class="k">大额存单 3 年</span><span class="v">${cd?.rates['3年']?.toFixed(2) ?? '—'}<small>%</small></span><span class="s">中行常规 · 20 万起</span></div>
+      <div class="panel kpi" style="--c:var(--bond)" data-kit-item="bond/0"><span class="k">储蓄国债 3 / 5 年</span><span class="v">${br[3]?.rate.toFixed(2) ?? '—'}<small>/ ${br[5]?.rate.toFixed(2) ?? '—'}%</small></span><span class="s">免利息税 · 发行即抢光</span></div>
+      <div class="panel kpi" style="--c:var(--accent-2)" data-kit-item="${nb.bond ? 'bond/' + D.bonds.indexOf(nb.bond) : 'next/0'}"><span class="k">下期国债</span><span class="v">${nbText}</span><span class="s">${nb.status === 'live' ? `${md(nb.bond.start)}–${md(nb.bond.end)} · ${nb.bond.kind}` : `${md(nb.date)} ${nb.status === 'expected' ? '（预计）' : '开售'}`}</span></div>
     </div>
 
     <h2 class="sec" id="calc">利息计算器<small>按单利估算，到期一次性拿到的利息</small></h2>
@@ -306,34 +526,36 @@ function render() {
     <h2 class="sec" id="rates">利率对比<small>年利率，单位 %</small></h2>
     <div class="panel"><div class="table-wrap">${rateTable()}</div></div>
 
-    <h2 class="sec" id="history">调息记录<small>中国银行人民币存款挂牌利率，${D.deposit_history.length} 次调整</small></h2>
+    <h2 class="sec" id="history">调息记录<small>中国银行人民币存款挂牌利率，${D.deposit_history.length} 次调整</small><a class="kit-morelink" href="#/list/history">全部 ${D.deposit_history.length} 次 →</a></h2>
     <div class="panel chart-box">
       <div class="chart" id="chart">${chartSVG()}<div class="tip" id="tip"></div></div>
       <div class="legend"><span style="--c:var(--bank)"><i></i>大行 3 年定期</span><span style="--c:var(--accent-2)"><i></i>大行 1 年定期</span><span style="--c:var(--bond)"><i></i>储蓄国债 3 年</span></div>
       <div class="changes" style="margin-top:14px">${changesList()}</div>
     </div>
 
-    <h2 class="sec" id="bonds">储蓄国债<small>来自中国银行销售公告 · 每年 3–11 月每月 10 日开售</small></h2>
-    <div class="panel next">
+    <h2 class="sec" id="bonds">储蓄国债<small>来自中国银行销售公告 · 每年 3–11 月每月 10 日开售</small><a class="kit-morelink" href="#/list/bonds">全部 ${D.bonds.length} 期 →</a></h2>
+    <div class="panel next" data-kit-item="${nb.bond ? 'bond/' + D.bonds.indexOf(nb.bond) : 'next/0'}">
       <div class="cd">${nb.status === 'live' ? '发售中' : daysBetween(todayISO(), nb.date)}${nb.status === 'live' ? '' : '<small>天</small>'}</div>
       <div class="t">${nb.status === 'live' ? `${esc(nb.bond.title.replace('销售公告', ''))}` : nb.status === 'announced' ? `${md(nb.date)} 开售 · ${esc(nb.bond.title.replace('销售公告', ''))}` : `预计 ${md(nb.date)} 开售`}</div>
       <div class="s">${nb.status === 'expected' ? '以财政部公告为准（通常提前几天发布）。凭证式到银行网点买，电子式在手机银行买，热门时几分钟售罄，建议开售当天 8:30 前准备好。' : `${md(nb.bond?.start)}–${md(nb.bond?.end)} · ${nb.bond?.kind} · ${nb.bond?.kind === '凭证式' ? '银行网点购买，到期一次还本付息' : '手机银行 / 网银购买，按年付息'}`}</div>
     </div>
     <div class="panel"><div class="table-wrap">${bondTable()}</div></div>
 
-    <h2 class="sec" id="news">最新动态</h2>
+    <h2 class="sec" id="news">最新动态<a class="kit-morelink" href="#/list/news${state.topic === 'all' ? '' : '?topic=' + encodeURIComponent(state.topic)}">查看更多 →</a></h2>
     <div class="chips">${[['all', '全部'], ['国债', '国债'], ['存款', '存款利率'], ['大额存单', '大额存单']].map(([k, l]) => `<button class="chip ${state.topic === k ? 'on' : ''}" data-topic="${k}">${l}</button>`).join('')}</div>
-    <div class="panel">${D.news.filter(n => state.topic === 'all' || n.topic === state.topic).slice(0, 15).map(n => `<a class="news-item" href="${esc(n.url)}" target="_blank" rel="noopener">
-      <span class="t">${esc(n.title)}</span><span class="m">${esc(n.source)} · ${ago(n.time)}</span></a>`).join('') || '<div class="pad muted">暂无</div>'}</div>
+    <div class="panel">${newsRows(D.news.filter(n => state.topic === 'all' || n.topic === state.topic).slice(0, 8))}</div>
     <p class="note" style="margin-top:14px">数据仅供参考，不构成理财建议。实际利率以银行网点、App 或财政部公告为准；大额存单和国债额度有限，不同地区可能不同。</p>
   `;
   renderCalc();
   bindChart();
+}
 
+function renderAside() {
+  const dep = D.deposit, lpr = D.lpr?.[0];
   const abcOk = D.abc && ['1年', '3年', '5年'].every(k => D.abc.rates[k] === dep.rates[k]);
   $('#aside').innerHTML = `
     <div class="panel widget">
-      <h3>📈 贷款市场报价利率 LPR</h3>
+      <h3 data-kit-item="lpr/0" style="cursor:pointer;display:flex">📈 贷款市场报价利率 LPR <span class="muted" style="margin-left:auto">走势 ›</span></h3>
       ${lpr ? `<div class="mini-row"><span>1 年期</span><b>${lpr['1Y'].toFixed(2)}%</b></div><div class="mini-row"><span>5 年期以上（房贷参考）</span><b>${lpr['5Y'].toFixed(2)}%</b></div>
       <div class="note" style="margin-top:6px">${md(lpr.date)}公布 · 每月 20 日更新${lpr.date !== D.lpr.at(-1)?.date && D.lpr.every(x => x['1Y'] === lpr['1Y']) ? ` · 近 ${D.lpr.length} 个月未变` : ''}</div>` : '<div class="note">暂无</div>'}
     </div>
@@ -345,8 +567,8 @@ function render() {
     </div>
     <div class="panel widget">
       <h3>🏘 中小银行参考</h3>
-      ${(D.others?.groups || []).map(g => `<div class="mini-row"><span>${esc(g.name)} 3 年</span><b>${g.range?.['3年'] ? g.range['3年'].map(v => v.toFixed(2)).join('–') + '%' : fmtRate(g.rates?.['3年'])}</b></div>`).join('')}
-      <div class="note" style="margin-top:6px">${esc(D.others?.note || '')}<br>整理于 ${esc(D.others?.updated || '')} · ${(D.others?.sources || []).map((s, i) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">来源${i + 1}</a>`).join(' ')}</div>
+      ${(D.others?.groups || []).map((g, gi) => `<div class="mini-row" data-kit-item="group/${gi}"><span>${esc(g.name)} 3 年</span><b>${g.range?.['3年'] ? g.range['3年'].map(v => v.toFixed(2)).join('–') + '%' : fmtRate(g.rates?.['3年'])}</b></div>`).join('')}
+      <div class="note" style="margin-top:6px">${esc(D.others?.note || '')}<br>整理于 ${esc(D.others?.updated || '')} · 点上面的银行看来源</div>
     </div>
     <div class="panel widget">
       <h3>📡 数据来源 · ${D.sources.filter(s => s.ok).length}/${D.sources.length} 正常</h3>
@@ -355,6 +577,105 @@ function render() {
     </div>`;
   $('#updated').textContent = '更新于 ' + ago(D.updated);
 }
+// ── 详情（右侧抽屉）与列表页 ──
+const TOPICS = [['all', '全部'], ['国债', '国债'], ['存款', '存款利率'], ['大额存单', '大额存单']];
+const TERMS = ['活期', '3个月', '6个月', '1年', '2年', '3年', '5年'];
+function newsRows(list) {
+  return list.map(n => `<a class="news-item" href="#/item/news/${D.news.indexOf(n)}" data-kit-item="news/${D.news.indexOf(n)}">
+    <span class="t">${esc(n.title)}</span><span class="m">${esc(n.source)} · ${ago(n.time)}</span></a>`).join('') || '<div class="pad muted">暂无</div>';
+}
+const diff = (a, b) => a == null || b == null ? '' : a === b ? '<span class="muted">持平</span>'
+  : `<span class="${a < b ? 'cut' : 'ok'}">${a < b ? '↓' : '↑'}${Math.abs(a - b).toFixed(2)}</span>`;
+const bondName = b => b.title.replace('销售公告', '').replace(/^\d{4}年/, '');
+const bondStatus = b => { const t = todayISO(); return !b.start ? '' : t < b.start ? '即将开售' : t <= b.end ? '发售中' : '已结束'; };
+const tag = t => t ? `<span>${esc(t)}</span>` : '';
+
+KIT.item('news', id => {
+  const n = D.news[+id]; if (!n) return null;
+  const same = D.news.filter(x => x !== n && x.topic === n.topic).slice(0, 6);
+  return { title: n.title, sub: `${esc(n.source)} · ${new Date(n.time).toLocaleString('zh-CN', { hour12: false }).slice(0, -3)}`,
+    thumbIcon: { 国债: '🏛', 存款: '🏦', 大额存单: '💰' }[n.topic] || '📰', tags: [tag(n.topic === '存款' ? '存款利率' : n.topic), tag(ago(n.time))],
+    body: KIT.sec('说明', KIT.p('这条是从 Google 新闻按关键词聚合来的标题，正文在原网站。利率、额度以银行和财政部公告为准。'))
+      + KIT.sec(`同主题动态`, `<div class="kit-rows">${same.map(x => `<div class="kit-row" data-kit-go="news/${D.news.indexOf(x)}"><span class="kit-rt">${esc(x.title)}</span><span class="kit-rm">${esc(x.source)} · ${ago(x.time)}</span></div>`).join('')}</div>`, `<a class="kit-morelink" href="#/list/news?topic=${encodeURIComponent(n.topic)}">全部 →</a>`),
+    acts: [{ text: '阅读原文 ↗', href: n.url }] };
+});
+KIT.item('rate', id => {
+  const h = D.deposit_history, x = h[+id], p = h[+id + 1]; if (!x) return null;
+  const next = h[+id - 1];
+  return { title: `${x.date} 起执行的存款利率`, sub: '中国银行人民币存款挂牌利率（六大行一致）', thumbIcon: '🏦',
+    tags: [tag(+id === 0 ? '现行利率' : `执行到 ${next.date}`), p ? tag(`距上次调整 ${daysBetween(p.date, x.date)} 天`) : ''],
+    big: `<b>${x.rates['3年'].toFixed(2)}%</b><span class="muted">三年定期</span>${p ? diff(x.rates['3年'], p.rates['3年']) : ''}`,
+    body: KIT.sec('各期限利率', `<div class="table-wrap"><table><tr><th>期限</th><th>这次</th><th>上次</th><th>变化</th></tr>
+        ${TERMS.map(t => `<tr><td>${t}</td><td><b>${x.rates[t]?.toFixed(2) ?? '—'}</b></td><td>${p?.rates[t]?.toFixed(2) ?? '—'}</td><td>${p ? diff(x.rates[t], p.rates[t]) : ''}</td></tr>`).join('')}</table></div>`, '年利率 %')
+      + KIT.sec('前后几次调整', `<div class="kit-rows">${h.slice(Math.max(0, +id - 2), +id + 4).map(r => `<div class="kit-row" ${r === x ? '' : `data-kit-go="rate/${h.indexOf(r)}"`}>
+          <span class="kit-rt">${r === x ? '<b>' : ''}${r.date}${r === x ? '（当前查看）</b>' : ''}</span><span class="kit-rm">三年 ${r.rates['3年'].toFixed(2)}% · 一年 ${r.rates['1年'].toFixed(2)}%</span></div>`).join('')}</div>`, `<a class="kit-morelink" href="#/list/history">全部 →</a>`),
+    acts: [{ text: '中行利率表原文 ↗', href: x.url }] };
+});
+KIT.item('bond', id => {
+  const b = D.bonds[+id]; if (!b) return null;
+  const st = bondStatus(b);
+  const prevSame = D.bonds.filter(o => o !== b && o.kind === b.kind).slice(0, 6);
+  return { title: bondName(b), sub: `${b.year} 年 · ${esc(b.kind)}${b.start ? ` · ${md(b.start)}–${md(b.end)}` : ''}`, thumbIcon: '🏛',
+    tags: [st ? `<span style="${st === '发售中' ? 'background:var(--accent);color:#111' : ''}">${st}</span>` : '', tag(b.kind === '凭证式' ? '银行网点购买' : '手机银行 / 网银购买')],
+    big: b.items.map(i => `<b>${i.rate.toFixed(2)}%</b><span class="muted">${i.term} 年期 · 第 ${i.no} 期</span>`).join('&nbsp;&nbsp;'),
+    body: KIT.sec('要点', KIT.kv([['发售时间', b.start ? `${b.start} 至 ${b.end}` : '见公告'], ['品种', b.kind], ['付息方式', b.kind === '凭证式' ? '到期一次还本付息' : '每年付息一次'],
+        ['每人限额', (b.text || '').match(/不超过(\d+万元)/)?.[1] || ''], ['利息税', '免征'], ['提前兑取', b.kind === '凭证式' ? '可，按持有时间分档计息并收手续费' : '可，按规定扣息']]))
+      + (b.text ? KIT.sec('公告原文', KIT.p(b.text)) : '')
+      + KIT.sec(`往期${b.kind}国债`, `<div class="kit-rows">${prevSame.map(o => `<div class="kit-row" data-kit-go="bond/${D.bonds.indexOf(o)}"><span class="kit-rt">${o.year} 年${esc(bondName(o))}</span>
+          <span class="kit-rm">${o.items.map(i => `${i.term}年 ${i.rate.toFixed(2)}%`).join(' · ')}</span></div>`).join('')}</div>`, `<a class="kit-morelink" href="#/list/bonds">全部 →</a>`),
+    acts: [{ text: '中行销售公告 ↗', href: b.url }] };
+});
+KIT.item('next', () => {
+  const nb = nextBond();
+  return { title: `下期储蓄国债预计 ${md(nb.date)} 开售`, sub: '按往年「3–11 月每月 10 日」规律推算，以财政部公告为准', thumbIcon: '⏳',
+    big: `<b>${daysBetween(todayISO(), nb.date)}</b><span class="muted">天后</span>`,
+    body: KIT.sec('怎么买', KIT.p('凭证式：带身份证到银行网点柜台购买，到期一次还本付息。\n电子式：在手机银行 / 网银购买，每年付息一次。\n热门时几分钟售罄，建议开售当天 8:30 前准备好；财政部通常提前几天发布发行公告。'))
+      + KIT.sec('最近一期', `<div class="kit-rows">${D.bonds.slice(0, 3).map(o => `<div class="kit-row" data-kit-go="bond/${D.bonds.indexOf(o)}"><span class="kit-rt">${o.year} 年${esc(bondName(o))}</span><span class="kit-rm">${o.items.map(i => `${i.term}年 ${i.rate.toFixed(2)}%`).join(' · ')}</span></div>`).join('')}</div>`) };
+});
+KIT.item('cd', () => {
+  const c = D.cd; if (!c) return null;
+  return { title: '大额存单（中行常规产品）', sub: `${esc(c.title)} · ${c.date || ''}`, thumbIcon: '💰', tags: [tag(`${fmtMoney(c.min_amount / 10000)} 万元起存`)],
+    big: `<b>${c.rates['3年']?.toFixed(2) ?? '—'}%</b><span class="muted">三年期</span>`,
+    body: KIT.sec('各期限利率', `<div class="table-wrap"><table><tr><th>期限</th><th>大额存单</th><th>大行定期</th><th>多出</th></tr>
+        ${Object.entries(c.rates).map(([t, v]) => { const d = D.deposit.rates[t]; return `<tr><td>${t}</td><td><b>${v.toFixed(2)}</b></td><td>${d?.toFixed(2) ?? '—'}</td><td>${d != null ? `+${(v - d).toFixed(2)}` : ''}</td></tr>`; }).join('')}</table></div>`, '年利率 %')
+      + KIT.sec('说明', KIT.p('大额存单额度有限，各行、各地发行批次不同，部分产品可转让。这里取中国银行最近一次发售公告里的常规产品利率。')),
+    acts: [{ text: '发售公告 ↗', href: c.url }] };
+});
+KIT.item('lpr', () => {
+  const l = D.lpr || []; if (!l.length) return null;
+  return { title: '贷款市场报价利率 LPR', sub: '每月 20 日由全国银行间同业拆借中心公布', thumbIcon: '📈',
+    big: `<b>${l[0]['5Y'].toFixed(2)}%</b><span class="muted">5 年期以上（房贷参考）</span>`,
+    body: KIT.sec('近几个月', `<div class="table-wrap"><table><tr><th>公布日</th><th>1 年期</th><th>5 年期以上</th></tr>${l.map((x, i) => `<tr><td>${x.date}</td><td>${x['1Y'].toFixed(2)} ${diff(x['1Y'], l[i + 1]?.['1Y'])}</td><td>${x['5Y'].toFixed(2)} ${diff(x['5Y'], l[i + 1]?.['5Y'])}</td></tr>`).join('')}</table></div>`) };
+});
+KIT.item('group', id => {
+  const g = D.others?.groups?.[+id]; if (!g) return null;
+  return { title: g.name + '（参考利率）', sub: esc(g.examples), thumbIcon: '🏘', tags: [tag(`整理于 ${D.others.updated}`)],
+    big: g.range?.['3年'] ? `<b>${g.range['3年'].map(v => v.toFixed(2)).join('–')}%</b><span class="muted">三年期常见区间</span>` : '',
+    body: KIT.sec('各期限（常见值）', KIT.kv(Object.entries(g.rates || {}).map(([t, v]) => [t, v.toFixed(2) + '%']))) + KIT.sec('说明', KIT.p(g.remark + '\n' + (D.others.note || '')))
+      + KIT.sec('来源文章', `<div class="kit-rows">${(D.others.sources || []).map(s => `<a class="kit-row" href="${esc(s.url)}" target="_blank" rel="noopener"><span class="kit-rt">${esc(s.name)}</span><span class="kit-rm">↗</span></a>`).join('')}</div>`) };
+});
+
+// 列表页
+const LPAGE = 30;
+let listN = LPAGE;
+KIT.list('news', (_, q, box) => {
+  const topic = q.get('topic') || 'all', all = D.news.filter(n => topic === 'all' || n.topic === topic);
+  box.innerHTML = KIT.shell({ title: '最新动态', note: `${all.length} 条 · 国债 / 存款利率 / 大额存单新闻`,
+    chips: TOPICS.map(([k, n]) => ({ text: n, href: '#/list/news' + (k === 'all' ? '' : '?topic=' + encodeURIComponent(k)), on: k === topic, count: D.news.filter(x => k === 'all' || x.topic === k).length })),
+    body: `<div class="panel">${newsRows(all.slice(0, listN))}</div>`, more: all.length > listN ? `加载更多（${listN} / ${all.length}）` : '' });
+});
+KIT.list('history', (_, q, box) => {
+  const h = D.deposit_history;
+  box.innerHTML = KIT.shell({ title: '调息记录', note: `中国银行存款挂牌利率 · ${h.length} 次调整`,
+    body: `<div class="panel"><div class="table-wrap"><table><tr><th>执行日</th><th>活期</th><th>1 年</th><th>3 年</th><th>5 年</th><th>三年期变化</th><th></th></tr>
+      ${h.map((x, i) => `<tr data-kit-item="rate/${i}"><td>${x.date}</td><td>${x.rates['活期'].toFixed(2)}</td><td>${x.rates['1年'].toFixed(2)}</td><td><b>${x.rates['3年'].toFixed(2)}</b></td><td>${x.rates['5年'].toFixed(2)}</td><td>${h[i + 1] ? diff(x.rates['3年'], h[i + 1].rates['3年']) : ''}</td><td class="go">详情 ›</td></tr>`).join('')}</table></div></div>` });
+});
+KIT.list('bonds', (_, q, box) => {
+  box.innerHTML = KIT.shell({ title: '储蓄国债', note: `${D.bonds.length} 期 · 来自中国银行销售公告`, body: `<div class="panel"><div class="table-wrap">${bondTable(true)}</div></div>` });
+});
+document.addEventListener('click', e => { if (e.target.closest('[data-kit-more]')) { listN += LPAGE; render(); } });
+window.addEventListener('hashchange', () => { if (KIT.parse()?.kind !== 'item') listN = LPAGE; }, true);
+
 
 function renderCalc() {
   const list = channels(state.term);
@@ -386,21 +707,21 @@ function rateTable() {
 
 function changesList() {
   const h = D.deposit_history;
-  return h.slice(0, 12).map((x, i) => {
+  return h.slice(0, 10).map((x, i) => {
     const p = h[i + 1], d = p ? x.rates['3年'] - p.rates['3年'] : 0;
-    return `<a class="chg" href="${esc(x.url)}" target="_blank" rel="noopener"><div class="d">${esc(x.date)}</div>
+    return `<a class="chg" href="#/item/rate/${i}" data-kit-item="rate/${i}"><div class="d">${esc(x.date)}</div>
       <div class="r">${x.rates['3年'].toFixed(2)}%${p ? `<small class="${d < 0 ? 'cut' : 'ok'}">${d < 0 ? '↓' : d > 0 ? '↑' : ''}${Math.abs(d).toFixed(2)}</small>` : ''}</div><div class="d">三年期</div></a>`;
   }).join('');
 }
 
-function bondTable() {
+function bondTable(all) {
   const today = todayISO();
   return `<table><tr><th>发售时间</th><th>品种</th><th>期数</th><th>3 年期</th><th>5 年期</th><th></th></tr>
-    ${D.bonds.slice(0, 14).map(b => {
+    ${D.bonds.slice(0, all ? 999 : 8).map((b, idx) => {
       const r3 = b.items.find(i => i.term === 3), r5 = b.items.find(i => i.term === 5);
       const live = b.start <= today && today <= b.end;
-      return `<tr><td>${esc(b.start || '')}${live ? '<span class="tag on">发售中</span>' : ''}</td><td>${esc(b.kind)}</td><td>${b.year} · 第 ${b.items.map(i => i.no).join('、')} 期</td>
-        <td>${r3 ? r3.rate.toFixed(2) + '%' : '—'}</td><td>${r5 ? r5.rate.toFixed(2) + '%' : '—'}</td><td><a class="muted" href="${esc(b.url)}" target="_blank" rel="noopener">公告 ↗</a></td></tr>`;
+      return `<tr data-kit-item="bond/${idx}"><td>${esc(b.start || '')}${live ? '<span class="tag on">发售中</span>' : ''}</td><td>${esc(b.kind)}</td><td>${b.year} · 第 ${b.items.map(i => i.no).join('、')} 期</td>
+        <td>${r3 ? r3.rate.toFixed(2) + '%' : '—'}</td><td>${r5 ? r5.rate.toFixed(2) + '%' : '—'}</td><td class="go">详情 ›</td></tr>`;
     }).join('')}</table>`;
 }
 
@@ -467,11 +788,13 @@ async function load() {
   try {
     D = await fetch('data.json', { cache: 'no-cache' }).then(r => r.json());   // no-cache：更新后刷新即可见
     render();
+    KIT.boot();
   } catch (e) {
     if (!D) $('#main').innerHTML = '<div class="panel pad">数据加载失败，请稍后刷新</div>';
   } finally { $('#refresh').classList.remove('spin'); }
 }
 $('#refresh').addEventListener('click', load);
+KIT.init(render);
 load();
 </script>
 </body>
