@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T14:54:31+08:00",
+ "updated": "2026-11-07T23:31:38+08:00",
  "deposit": {
   "date": "2025-05-20",
   "rates": {
@@ -805,6 +805,13 @@
  ],
  "news": [
   {
+   "title": "快聊财经事丨2%的定期存款要不要冲？",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9lX25QXzEwZmJ1SzQxVmJUX21aSUJmbTBNUmYtOWZmV3Bmb1M1bE8wM0o4QmV0Qk8xR2hlMnJ4Zl83bzhoQW9fdHVMVFczbVlyMUR4dHZ0amVZZDNVWHA0d1hhWjZCUQ?oc=5",
+   "source": "河北新闻",
+   "time": "2026-11-07T09:12:33+00:00",
+   "topic": "大额存单"
+  },
+  {
    "title": "1.5亿人蜂拥买理财，为什么到手收益却变薄了？_投资者网_媒体广场_财经",
    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1hMklzMy13WGMwc0FqUDZTS3p5MFhuWUhCWE50RmE1YzM4dGZsdFlkSmxScnVxSENYRk9fMEoyV2VlSEc3SXplWUZSTDA0b3pFQTVhVEhKbk1aNXIwQUlZYg?oc=5",
    "source": "证券之星",
@@ -816,13 +823,6 @@
    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE8xck45SkVpUlpNc2NWZGZjS09aMUE4eFFZUktFclJiZFJhRDRXVjloU3lkOVhLTVRKb0pPTEFiUFl1MHREX1R6MnBnbE9LMU05OW5qdV9fVXN2NFppZE9zdk1n?oc=5",
    "source": "手机网易网",
    "time": "2026-11-06T16:11:53+00:00",
-   "topic": "大额存单"
-  },
-  {
-   "title": "存款利率拐点来了？有储户存500万 大户锁死未来收益",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE45VWlUcnU1QkNNNTJrMk9QWUo0NHUzV0VSTDBiOUtrVmlCcHMwVHZibEFUZk5XeVpJWkNEUzZwTGd2NHhubUg1XzZidVBKREpBQzl5SzNjMXlYNzMxR3ZNRTVJbUlWdjdZT3hORWJSazk?oc=5",
-   "source": "中华网",
-   "time": "2026-11-06T12:19:11+00:00",
    "topic": "大额存单"
   },
   {
@@ -1141,29 +1141,29 @@
   {
    "name": "中国银行 利率表",
    "ok": true,
-   "updated": "2026-11-07T14:54:31+08:00",
+   "updated": "2026-11-07T23:31:38+08:00",
    "count": 20
   },
   {
    "name": "农业银行 利率表",
    "ok": true,
-   "updated": "2026-11-07T14:54:31+08:00"
+   "updated": "2026-11-07T23:31:38+08:00"
   },
   {
    "name": "中国银行 国债/大额存单公告",
    "ok": true,
-   "updated": "2026-11-07T14:54:31+08:00",
+   "updated": "2026-11-07T23:31:38+08:00",
    "count": 21
   },
   {
    "name": "外汇交易中心 LPR",
    "ok": true,
-   "updated": "2026-11-07T14:54:31+08:00"
+   "updated": "2026-11-07T23:31:38+08:00"
   },
   {
    "name": "Google News",
    "ok": true,
-   "updated": "2026-11-07T14:54:31+08:00"
+   "updated": "2026-11-07T23:31:38+08:00"
   }
  ]
 }
