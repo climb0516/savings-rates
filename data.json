@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T23:51:43+08:00",
+ "updated": "2026-11-09T15:45:47+08:00",
  "deposit": {
   "date": "2025-05-20",
   "rates": {
@@ -805,6 +805,13 @@
  ],
  "news": [
   {
+   "title": "债市早参11月9日｜国常会部署 持续化解地方政府债务等领域风险；利率自律机制核心成员增至18家",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAyVTF3S0gxWko3aEgzSHdTY0FvVWIzM1piSXJwNUV1cTJnV1lVYUN1VmJnazI4RlY0cWlwS01teE9RYmNibmpNV2VoS2tJbnhCM1duU1F2VVNsNGhzOHFZbUt3?oc=5",
+   "source": "手机网易网",
+   "time": "2026-11-09T01:11:30+00:00",
+   "topic": "国债"
+  },
+  {
    "title": "【财富周刊】六大行大额存单发行全部重启，私募资管备案年内再破月度纪录",
    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBnQmNwWFBFS0Y3Qng3Nk9MeFNJdHlrdTVUZEJCeWxaU1lwQ3VXRXdLQ013UkRQaTVGY0FfSmZQX2hPU3M3V3ZKUUx5UU52eEFjQXJfQ1hvZ2o?oc=5",
    "source": "Jiemian.com",
@@ -866,6 +873,13 @@
    "source": "观点网",
    "time": "2026-11-05T10:02:29+00:00",
    "topic": "国债"
+  },
+  {
+   "title": "越南央行第二区域分行要求银行实质下调存款利率至少0.5个百分点",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1MR2xabjNzdExjQm9MaUZuYUZ6dVBjUGJ0VjY0R1VzMFhxTUx2akxGTng2SmJxNi1lbmx0cUJZdi1pQy0zSEMwRU9Td0tQTWJDRFFTd2lR?oc=5",
+   "source": "QQ News",
+   "time": "2026-11-05T06:44:00+00:00",
+   "topic": "存款"
   },
   {
    "title": "六大行大额存单集体返场：5年期利率1.55%至1.60%，部分产品售罄",
@@ -938,13 +952,6 @@
    "topic": "国债"
   },
   {
-   "title": "返场的大额存单，没那么香了",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBtVWxwN2tJZU1PUkkzbEtYYnNXOEZ6bEJmMC12bG9OcnFmTVhtVVQ4d1BiS2xoSjZwMTVBOXZuTlNIbVpzZWZGa0RpM2hZU2VpbFZYcHVuS2JsTTk0dld2OQ?oc=5",
-   "source": "ThePaper.cn",
-   "time": "2026-11-03T08:18:49+00:00",
-   "topic": "大额存单"
-  },
-  {
    "title": "大额存单“全员归队”！六大行补齐拼图，守住存量存款成核心考量",
    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOZFdOc3hJWlR2LW4xYU1QWkFTMnJKeTRBMGNDOGY1dGhfS05wMklhNHZjcnNnYUtWZ1ROR0dlNGhNWVY3dXhTZkN6cGlmLXQyV05OdVRxTFZyRXNWSmg0dUNmWW5hcWtqTDcwWDk5QVhQdUJRQzY3Mlh4UndTRVRybXFJQnBMN2hCUklnNjVfTQ?oc=5",
    "source": "21财经",
@@ -987,10 +994,24 @@
    "topic": "大额存单"
   },
   {
+   "title": "2026年11月1日|政策法规通：投资者认购储蓄国债（凭证式）规定——《储蓄国债（凭证式）管理办法》系列解读",
+   "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5zUGpUWmhqWUtqSjRfNUttbWNuUFp2SlJxUHJYSGtCRkJoMVYzQmF0WjVyak5TZGZuTDM3aDh3TlNmV2llWHBHQTZndGM?oc=5",
+   "source": "凤凰网",
+   "time": "2026-11-01T06:06:57+00:00",
+   "topic": "国债"
+  },
+  {
+   "title": "大额存单批量重启 存款利率延续分化格局",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNb01oTlV0YzV5czdEVFBUVnBtNU1tXzFpa2JuZFVvN0dKcTlnTGI3MkxWT3hFV3JlT1ZuRWVlWmxlVldhMk5iRDN2YUFsc1BadklpeEloRlYxN0FMd1l2S08wNGRjY3VJdjczVFRCa05yYU9vTFhZQlktZURpUmVTbQ?oc=5",
+   "source": "经济参考报",
+   "time": "2026-10-31T07:00:00+00:00",
+   "topic": "大额存单"
+  },
+  {
    "title": "大额存单回来了，银行密集上线",
    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOTG1wMHctTVUxMGV1ck5ScU1IeF9fRmM0T3dqdXBwbkcyMk9mWGZtSjRBczRkTWc0RzFOY2IxOXpSVnluT0w2VTRHNC00Q2Y4cDNHLVM1aldGcXlEWjRaN1dlUVhEb3RNSXgzRWFRVVdqM0oxN0tNcFNTMTlSWUZ2b2RkYWZKNEVvaUFDUmVTYw?oc=5",
    "source": "21财经",
-   "time": "2026-10-31T13:00:39+00:00",
+   "time": "2026-10-31T07:00:00+00:00",
    "topic": "大额存单"
   },
   {
@@ -1001,25 +1022,11 @@
    "topic": "大额存单"
   },
   {
-   "title": "大额存单批量重启 存款利率延续分化格局",
-   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNb01oTlV0YzV5czdEVFBUVnBtNU1tXzFpa2JuZFVvN0dKcTlnTGI3MkxWT3hFV3JlT1ZuRWVlWmxlVldhMk5iRDN2YUFsc1BadklpeEloRlYxN0FMd1l2S08wNGRjY3VJdjczVFRCa05yYU9vTFhZQlktZURpUmVTbQ?oc=5",
-   "source": "经济参考报",
-   "time": "2026-10-31T01:10:26+00:00",
-   "topic": "大额存单"
-  },
-  {
    "title": "美国财政部公布新版I系列储蓄债券利率，未来半年利率达5.51%",
    "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNT0xwdlFCN2JRSDRPR25yS3otMTVrUjZ4QmpYelFNWUJTaWVlUUh3Wk9Lb09iQlpXMmlWWTNiQmVXT3RrX08wM1ZnZ3Y5MHlvbmEtX3BzUl84OXJ5T1dUM195cnNGeUlWcUlLeFB0ektRRTBoVkI2NHdTeUlwSkdCQy1IanpsMkNiVTRTTGRfZjJES3Atakp6UEcxMXY3c29ZSDh5MXRpa2F6NElGSGJ5ejFwc1pQclZxT05OdURFSVZxZndVcndXby1KN0EzdzdfUm1nVURJWDBtVFc1aVE?oc=5",
    "source": "新浪财经",
    "time": "2026-10-30T15:07:31+00:00",
    "topic": "国债"
-  },
-  {
-   "title": "20万元起存，利率却不一定高于同期限定存：“抢手”的大额存单，抢的究竟是什么？丨川观智库·金融研究院",
-   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE16ejBVMFd5anFjeDN5dkNEcEV4MkcxWWt5UTN2cXNpS1V6QVlMUHpabG5PLWIxZkdEdlpWX1FjbnFuYWtteVBpZFRwdUo4Zw?oc=5",
-   "source": "川观新闻",
-   "time": "2026-10-30T07:00:00+00:00",
-   "topic": "大额存单"
   },
   {
    "title": "大额存单批量“上新” 回归并非利率拐点",
@@ -1076,13 +1083,6 @@
    "source": "财富号",
    "time": "2026-10-21T07:00:00+00:00",
    "topic": "国债"
-  },
-  {
-   "title": "美元存款产品利率冲上4%，社交平台现“美元定存5%”营销帖，专家紧急提醒",
-   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9vUVozVGNQc19JTHRGSEtiaThWWVFwMG9wcEl2QkdMQUEycFM3TTZzcFNLZGp2QTVqaVRDTHBLOVJTcUp5ZlJoa0lyeXl2NnRGS3V5bWV0RkxMZzFUS0E1Sg?oc=5",
-   "source": "东方财富",
-   "time": "2026-10-21T07:00:00+00:00",
-   "topic": "存款"
   }
  ],
  "others": {
@@ -1141,29 +1141,29 @@
   {
    "name": "中国银行 利率表",
    "ok": true,
-   "updated": "2026-11-08T23:51:43+08:00",
+   "updated": "2026-11-09T15:45:47+08:00",
    "count": 20
   },
   {
    "name": "农业银行 利率表",
    "ok": true,
-   "updated": "2026-11-08T23:51:43+08:00"
+   "updated": "2026-11-09T15:45:47+08:00"
   },
   {
    "name": "中国银行 国债/大额存单公告",
    "ok": true,
-   "updated": "2026-11-08T23:51:43+08:00",
+   "updated": "2026-11-09T15:45:47+08:00",
    "count": 21
   },
   {
    "name": "外汇交易中心 LPR",
    "ok": true,
-   "updated": "2026-11-08T23:51:43+08:00"
+   "updated": "2026-11-09T15:45:47+08:00"
   },
   {
    "name": "Google News",
    "ok": true,
-   "updated": "2026-11-08T23:51:43+08:00"
+   "updated": "2026-11-09T15:45:47+08:00"
   }
  ]
 }
