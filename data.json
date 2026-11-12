@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T00:58:26+08:00",
+ "updated": "2026-11-12T16:03:55+08:00",
  "deposit": {
   "date": "2025-05-20",
   "rates": {
@@ -826,6 +826,48 @@
  ],
  "news": [
   {
+   "title": "美元定存利率上调叠加年末信贷投放发力，银行ETF易方达（516310）盈利企稳逻辑强化-ETF火线",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE85b0VHUWJWVDcwM3FqVTNkaHdLNnB0TUpfV3JJSEdLNG1oNHNUUENQblN4TkdhdHRUWE0yaG1VQks5aEdvSVRhejBRV0MtZ0FkNzBQTW1aZ0VYbFhUY1plbGhVSVN5cTBXVk9EZ1JjcWE?oc=5",
+   "source": "金融界",
+   "time": "2026-11-12T06:11:59+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "“比演唱会门票还难抢！”年内最后一批储蓄国债开售 有银行线上近5亿元额度秒光",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9XVHZNQUxoQ1JxeUZVZjJFNmdUNFNPdGJOTGppMWRTclNuYTZHVGNLeHZORzBqazYxdFd1SWRtTWtFQi10LVJ3alBCb3FINVZrYUlPMU9ydTB1LVY5VU02dFJDRQ?oc=5",
+   "source": "东方财富",
+   "time": "2026-11-12T02:44:12+00:00",
+   "topic": "国债"
+  },
+  {
+   "title": "年内最后一批储蓄国债“秒光”，低利差下为何仍遭抢购？",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOOXdwM25hQU1tNGJxcFZMSXY5X0ZwYUtCY2ZqU0VHTVJDY3FYbjBrcGpsbktDXy1kbkkwYXhaZFZHRFg1aVh5S0loazAwb0NiX09mREQ5aHA5NDVGNjV2bVBIbUNRX0xUUk5CQjl5My1wUXl0T0ZBZHVITXNodmh1WGdjWEtOcWNz?oc=5",
+   "source": "Sohu",
+   "time": "2026-11-12T01:57:25+00:00",
+   "topic": "大额存单"
+  },
+  {
+   "title": "多家银行上调美元定存利率，部分产品突破4%",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE50enI4ZXZzTmUxSGt1TjE1SWdjLTFqSDVTRm5yOEtNbHViQ1d2bW9WeTJON1FEcGRPZms1LWg3MktDblNMRXZMcDRDSFNUMGF0OUtMMTlnTWV6TzFXWVpJc1JKaE1jLXVGazRmUks3ZmNtLWhN?oc=5",
+   "source": "金融界",
+   "time": "2026-11-12T00:41:57+00:00",
+   "topic": "存款"
+  },
+  {
+   "title": "两分钟售罄！投资者在银行“抢”什么？",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBwM0UySmUzTDJnYW1qOHZjV2tnTGsyY3AycUdoanlIUjMzWkktMC1BUFJBcmRmaVdTOE04WnJhY2Jac0RYcXZDMnZiTGJwcE9zS2diM3FxaHdQN3ZDLWRtYzFkM1U2LTF0UE45U2VuejQ?oc=5",
+   "source": "金融界",
+   "time": "2026-11-12T00:19:02+00:00",
+   "topic": "国债"
+  },
+  {
+   "title": "多家银行上调美元定存利率 大众银行12个月最高4.2%",
+   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5nbUtQMFl3N3JmVW5jRUxTQ1BnbHVtUGk5WU9YWXBOQ04tc3Z6aHl1ZlNEVUxsTFdMc2NyTXZtOTVFV3lKQUdyMnlJcjRZZw?oc=5",
+   "source": "观点网",
+   "time": "2026-11-11T23:46:56+00:00",
+   "topic": "存款"
+  },
+  {
    "title": "今年第九期和第十期电子式储蓄国债发行",
    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxORW5OR2RNZFd5bWllZnNrUGxieldVbXNrNF9KYUEySS1OdG5vVlRjWFJYb0hacEhSRHRpZnVZeFBvY2VYZFE1OEF1TTVEcnc0cVBqLWpMYVNSb0U4UnVyaENqYzdRMGRsbnk5TXkyYVdHZEVwQ3hwaDVJUEZCd295U2U3Yw?oc=5",
    "source": "手机新浪网",
@@ -837,13 +879,6 @@
    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1TbWNRSVBuUjJCcGRyUFVPQlQxT0dVRFBYVlJZSGVKVnBaUHYxVWdubEEyc1ZtaTNsMTJva0tCVDlvQUNiN0VRaTZZTjc4MTRldWFwSFREX0pJQU41cVlSeFpkX20taDk0VDhVbklndWtWUQ?oc=5",
    "source": "金融界",
    "time": "2026-11-11T10:01:15+00:00",
-   "topic": "国债"
-  },
-  {
-   "title": "农行张掖临泽县支行：国债下乡进商铺 金融惠民助振兴",
-   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1aa3BfSFlEU0M0TlBSVjd1dnBKa2RZYlRDd3NOc3J5aHo4dXVYUXE2NjBSVnBVdTVOQWM0RDRVY2Z6WDJGM000RnJTeVJtR1pXYUE4aDNNNzQ1V0d3dWFGX1FhNlI?oc=5",
-   "source": "www.gsjb.com",
-   "time": "2026-11-11T08:23:00+00:00",
    "topic": "国债"
   },
   {
@@ -917,13 +952,6 @@
    "topic": "大额存单"
   },
   {
-   "title": "2026年第九期和第十期电子式储蓄国债今天（11月10日）发行_全球_新闻",
-   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1kZTFyLTZ6cGR1MkhjMkRtRTMxNXppZ2hNNnJucFRIUkpxamVXSTRfZ2wxRnV3YmNSZTJtU3A1eV85UGJCenV6TjlKUWw5ajhoMGJrOXFMSTAteUNieHI2X0g0VWQ?oc=5",
-   "source": "华人头条",
-   "time": "2026-11-10T01:33:00+00:00",
-   "topic": "国债"
-  },
-  {
    "title": "大陸銀行上調美元存息 分析：為留住美元存款",
    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE93MUVNbTgtWjhmQmoyZjdNZUhFMi0zMWNnRXd0ZV9hb0RFcmdCdTZpZmR4RTBYSExGQnByVkNza3N2MW1sZWJMdWRQeFpNNEE1bG4teHhkOVkydkVaVmtITNIBZkFVX3lxTFBuN2lTWlJ6NlRsU1JON3E2OXY3MzB0V2xscUY5S21wSkphX2lBVDRZMDJiamU1czFlUVVMazV3UGNVcEZTcHRKcUwyYmVwbFdSNzFGRGxheDZNSi1PalluQ0ZNSjhHdw?oc=5",
    "source": "大紀元",
@@ -994,24 +1022,17 @@
    "topic": "大额存单"
   },
   {
-   "title": "越南国家银行公布降息的各项措施",
-   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFByTkZWTlVMblNpeWV0VlBqUXZjVjBNQkxLbFh6OGRPVEZZdWRJQmlRVkFOaEE2dDR1THJCTUJ6aTFKNEhyVVc4clBGM1hmVUNZdW5oNzlSazkzd2ZF?oc=5",
-   "source": "Vietnam+ (VietnamPlus)",
-   "time": "2026-11-04T09:18:25+00:00",
+   "title": "中国人民银行决定上调金融机构外汇存款准备金率",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0wSkc2LThEb2ZNNjRsTWptTnEyM2hBRnc2U2tBZkY1NTVYUkowUTdTbE83aGNrX0Rpd1Z2V3dvZWQ0SUxDTHpLcDRJdkI3Q0hfWHV1VllLSXR2SkJWcW1ST0dMWmE3a0tOLWhGRjJ5WnNUUQ?oc=5",
+   "source": "京报网",
+   "time": "2026-11-03T08:00:00+00:00",
    "topic": "存款"
   },
   {
    "title": "返场的大额存单，没那么香了",
    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBtVWxwN2tJZU1PUkkzbEtYYnNXOEZ6bEJmMC12bG9OcnFmTVhtVVQ4d1BiS2xoSjZwMTVBOXZuTlNIbVpzZWZGa0RpM2hZU2VpbFZYcHVuS2JsTTk0dld2OQ?oc=5",
    "source": "ThePaper.cn",
-   "time": "2026-11-03T08:18:49+00:00",
-   "topic": "大额存单"
-  },
-  {
-   "title": "中行、农行、建行、工行、交行、邮储银行，大额存单“集体归队”",
-   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1tVUh6emJDN3pMYi1MbVNjTDc3dWZnVjktYVRKSTZyRTNBaGRSczU4TnlSNXNHRXNvd21KZlFhWlh2N0QtejNzSWpMOWRTUEN5cUptMEtiSEJvdDg2WUtvNzh6eXRtS2dDeTgwT0dkbU9pZkpMUEp5X3JqVk4?oc=5",
-   "source": "央视网",
-   "time": "2026-11-03T02:11:00+00:00",
+   "time": "2026-11-03T08:00:00+00:00",
    "topic": "大额存单"
   },
   {
@@ -1057,13 +1078,6 @@
    "topic": "存款"
   },
   {
-   "title": "维持、上调还是下调利率？这就是印尼银行的原因",
-   "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxOSE81TmtvSXNnZ2pYN0tqX25GQ1JkbFJLdXZ0Y05hY253STNiR3ZfcWtZQ0YwSGlqcjhUR1NiUDVFcDNmNlFPT0xEQ0YzQkRxeDA1WUxiM3N6U3lqSnVrYVFOR3BvOWZzM0NGR2x5MjM1VEpaZ3dkMUpicVpFcWZoWklnS1Zad3UxTkQ5QlhJNTEtTWxRZDdyNkFwZGl4QjlVSkM5QWJER1NmSlF3WW5EdTRLeGdneTl2clhoVVphTkZrUkRCLTcyUktZTUExTVMxVWlsNWdMNHlGYU8wMjZFTEJmbGlIRVhSeXBtMmI4MERyeWJKNzQtOFR5b1pNazJSN0ZTTmYyUDBWZkhPX0w4dGtjSkxVSDdZMnJ6ME03VkJjTEN0V1A5R19KUUU3blRxaVB3cXdDMDlwMlRLZWN1QVBfTDVzblk?oc=5",
-   "source": "IDNFinancials",
-   "time": "2026-10-24T07:00:00+00:00",
-   "topic": "存款"
-  },
-  {
    "title": "储蓄国债为何受热捧？求稳的钱该怎么配，居民理财这一年有什么变化",
    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBqV1VVM1VWU1d4Q1pLZ19jQWFhanBVOGQ5UVJ5VUhYZTBzSXpCVTFFYTg1Nk53RUN3am1OSkZYWkRKOG1BZXllQk9tNWd1QmZGeldSeUx2NHJhNWFLcUE?oc=5",
    "source": "上观新闻",
@@ -1078,11 +1092,11 @@
    "topic": "存款"
   },
   {
-   "title": "受美国加息带动 新加坡银行定存利率破2%创今年新高",
-   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBDZ2wxbU9JZU05cmlOX3N1UGxVLXd6aHROME01SE5sZW1HSE5CSzdVa0xkOTlWcEcxU1pjcWdZdkphcE1tUm05UnY2d2owZHlhUmFTUjNlZmZfakRvQm5JTjBuRm9xV3I1dmJPbW8xOE1fZE0?oc=5",
-   "source": "联合早报",
+   "title": "又见民营银行重启发售大额存单，专门强调本地销售，个人异地存款业务整改加速",
+   "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1qMXBTQk1mMS10Y3BCZUxUNlhGaFVDc2dVZzJ3SEgzc0xCblZEVUd2V1pWOW9XT3F4eDF4V1JmVVducVdsZXc?oc=5",
+   "source": "财联社电报",
    "time": "2026-10-22T07:00:00+00:00",
-   "topic": "存款"
+   "topic": "大额存单"
   },
   {
    "title": "美元存款产品利率冲上4%，社交平台现“美元定存5%”营销帖，专家紧急提醒",
@@ -1090,20 +1104,6 @@
    "source": "东方财富",
    "time": "2026-10-21T07:00:00+00:00",
    "topic": "存款"
-  },
-  {
-   "title": "越南国家银行要求商业银行下调六个月以上存款利率",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBBSC1Hd09PbUxTS1AxSlY4UVVjYjVqa1ZFbVhDZ0VmOFhLX0VRdHhhWUt0dVQydWdzaWlwc25FVTFxVTVZT2pGcTB2YWxLY3FyWWlXQ0Rn?oc=5",
-   "source": "QQ News",
-   "time": "2026-10-20T07:00:00+00:00",
-   "topic": "存款"
-  },
-  {
-   "title": "定期存款、大额存单现“2字头”利率_热点",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1MdndCakZvY0s4aE40TzUtNWN5RVg4NjhXLTVDbzZMVHp4N0toRTVKQklkT3MyaFlQMjRkUUpQY240bHc3SFpyZnFVc25qV1o1REtoS2J6cjZvajlQcTZSNDFkaGhsQkJV?oc=5",
-   "source": "湖南红网",
-   "time": "2026-10-20T07:00:00+00:00",
-   "topic": "大额存单"
   }
  ],
  "others": {
@@ -1162,29 +1162,29 @@
   {
    "name": "中国银行 利率表",
    "ok": true,
-   "updated": "2026-11-12T00:58:26+08:00",
+   "updated": "2026-11-12T16:03:55+08:00",
    "count": 20
   },
   {
    "name": "农业银行 利率表",
    "ok": true,
-   "updated": "2026-11-12T00:58:26+08:00"
+   "updated": "2026-11-12T16:03:55+08:00"
   },
   {
    "name": "中国银行 国债/大额存单公告",
    "ok": true,
-   "updated": "2026-11-12T00:58:26+08:00",
+   "updated": "2026-11-12T16:03:55+08:00",
    "count": 22
   },
   {
    "name": "外汇交易中心 LPR",
    "ok": true,
-   "updated": "2026-11-12T00:58:26+08:00"
+   "updated": "2026-11-12T16:03:55+08:00"
   },
   {
    "name": "Google News",
    "ok": true,
-   "updated": "2026-11-12T00:58:26+08:00"
+   "updated": "2026-11-12T16:03:55+08:00"
   }
  ]
 }
